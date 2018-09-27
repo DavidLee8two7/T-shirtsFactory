@@ -185,13 +185,13 @@ footer .footer_discl {
 }
 
 .featured_number {
-    font-size: 270px;
+    font-size: 96px;
     color: #ffffff;
     transform: translate(260px,170px);
     position: absolute;
 }
 
-.featured_player {
+.featured_image {
     width: 500px;
     height: 500px;
     background-size: contain !important;
