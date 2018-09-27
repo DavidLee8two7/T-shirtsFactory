@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-
-import { Logo } from '../ui/icons';
-
+import { Logo } from '../Utils/Icons';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
