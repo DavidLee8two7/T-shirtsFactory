@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
-import { Logo } from '../../Utils/Icons';
+
+import entrance from '../../../Resources/images/entrance.jpg';
 
 class Text extends Component {
   animateNumber = () => (
@@ -14,7 +15,7 @@ class Text extends Component {
       enter={{
         opacity: [1],
         rotate: [360],
-        timing: { duration: 500, ease: easePolyOut },
+        timing: { delay: 800, duration: 500, ease: easePolyOut },
       }}
     >
       {({ opacity, rotate }) => {
@@ -23,14 +24,10 @@ class Text extends Component {
             className="featured_number"
             style={{
               opacity,
-              transform: `translate(330px, 170px) rotateY(${rotate}deg)`,
+              transform: `translate(330px, 270px) rotateY(${rotate}deg)`,
             }}
           >
-            <div style={{ flexGrow: 1 }}>
-              <div className="header_logo">
-                <Logo width="150px" height="150px" />
-              </div>
-            </div>
+            Since 1996
           </div>
         );
       }}
@@ -99,9 +96,36 @@ class Text extends Component {
     </Animate>
   );
 
+  animateImage = () => (
+    <Animate
+      show={true}
+      start={{
+        opacity: 0,
+      }}
+      enter={{
+        opacity: [1],
+        timing: { delay: 800, duration: 500, ease: easePolyOut },
+      }}
+    >
+      {({ opacity }) => {
+        return (
+          <div
+            className="featured_image"
+            style={{
+              opacity,
+              background: `url(${entrance})`,
+              transform: `translate(450px, 96px)`,
+            }}
+          />
+        );
+      }}
+    </Animate>
+  );
+
   render() {
     return (
       <div className="featured_text">
+        {this.animateImage()}
         {this.animateNumber()}
         {this.animateFirst()}
         {this.animateSecond()}
