@@ -391,23 +391,23 @@ footer .footer_discl {
 ===============================*/
 
 
-.home_meetplayers { 
+.best_sellers { 
     background: #ffffff;
 }
 
-.home_meetplayers_wrapper {
+.best_sellers_wrapper {
     padding-bottom: 100px;
     min-height: 600px;
 }
 
-.home_meetplayers .home_card_wrapper {
+.best_sellers .home_card_wrapper {
     position: relative;
     float: left;
     width: 630px;
     min-height: 600px;
 }
 
-.home_meetplayers .home_text_wrapper {
+.best_sellers .home_text_wrapper {
     float: right;
     width: 390px;
 }

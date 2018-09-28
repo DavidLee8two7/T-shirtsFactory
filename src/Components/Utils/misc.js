@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Tag = props => {
+  console.log(props);
   const template = (
     <div
       style={{
@@ -11,6 +12,7 @@ export const Tag = props => {
         padding: '5px 10px',
         display: 'inline-block',
         fontFamily: 'Righteous',
+        ...props.custom,
       }}
     >
       {props.children}
