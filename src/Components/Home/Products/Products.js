@@ -1,10 +1,10 @@
 import React from 'react';
-import { Tag } from '../../Utils/misc';
-import Blocks from '../Category/Blocks';
+import { Tag } from '../../Utils/Misc';
+import Blocks from './Blocks';
 
-const Catagory = () => {
+const Products = () => {
   return (
-    <div className="categories">
+    <div className="products">
       <div className="container">
         <Tag bck="#0e1731" size="50px" color="#ffffff">
           Main Products
@@ -26,4 +26,4 @@ const Catagory = () => {
   );
 };
 
-export default Catagory;
+export default Products;

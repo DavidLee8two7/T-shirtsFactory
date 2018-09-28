@@ -1,12 +1,12 @@
 import React from 'react';
 import Featured from './Featured/Featured';
-import Category from './Category/Category';
+import Products from './Products/Products';
 
 const Home = () => {
   return (
     <div className="bck_blue">
       <Featured />
-      <Category />
+      <Products />
     </div>
   );
 };

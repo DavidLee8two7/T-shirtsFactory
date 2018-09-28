@@ -14,6 +14,6 @@ const config = {
 firebase.initializeApp(config);
 
 const firebaseDB = firebase.database();
-const firebaseCategory = firebaseDB.ref('matches');
+const firebaseProducts = firebaseDB.ref('matches');
 
-export { firebase, firebaseCategory };
+export { firebase, firebaseProducts };

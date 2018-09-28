@@ -220,25 +220,27 @@ footer .footer_discl {
             MATCHES HOME
 ===============================*/
 
-.categories {
+.products {
     background: #98c5e9;
     margin-top:9px;
     padding: 50px 0px;
 }
 
-.categories .category {
+.products .items {
     flex-wrap: wrap;
     display: flex;
     margin-top: 60px;
 }
 
-.categories .category .item {
+.products .items .item {
     width: 50%;
     margin: 35px 0px;
 }
 
-.categories .category .item .wrapper {
+.products .items .item .wrapper {
     padding-right:30px;
+    width: 250px;
+    height: 250px;
 }
 
 
@@ -246,21 +248,25 @@ footer .footer_discl {
             MATCHES BLOCK
 ===============================*/
 
-.match_block .match_date{
+.display_block .product_title {
     color:#ffffff;
     font-size:18px;
+
 }
 
-.match_block .match_wrapper .match_top,
-.match_block .match_wrapper .match_bottom {
+.display_block .product_wrapper,
+.display_block .product_wrapper {
     display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
 }
-.match_block .match_wrapper .match_bottom {
+.display_block .product_wrapper {
     margin-top: 5px;
 }
 
-.match_block .match_wrapper .match_top .left,
-.match_block .match_wrapper .match_bottom .left {
+.display_block .product_wrapper .product_display,
+.display_block .product_wrapper .product_display {
     background: #ffffff; 
     font-family: 'Righteous', cursive;
     flex-grow: 1;
@@ -268,26 +274,26 @@ footer .footer_discl {
     padding: 10px;
 }
 
-.match_block .match_wrapper .match_top .left div,
-.match_block .match_wrapper .match_bottom .left div {
+.display_block .product_wrapper .product_display div,
+.display_block .product_wrapper .product_display div {
     float:left
 }
 
-.match_block .match_wrapper .match_top .left .icon,
-.match_block .match_wrapper .match_bottom .left .icon {
+.display_block .product_wrapper .product_display .icon,
+.display_block .product_wrapper .product_display .icon {
     width: 50px;
     height: 50px;
     background-size: cover !important;
 }
-.match_block .match_wrapper .match_top .left .team_name,
-.match_block .match_wrapper .match_bottom .left .team_name {
+.display_block .product_wrapper .product_display .product_name,
+.display_block .product_wrapper .product_display .product_name {
     font-size: 30px;
     padding: 6px 10px;
 }
 
 
-.match_block .match_wrapper .match_top .right,
-.match_block .match_wrapper .match_bottom .right { 
+.display_block .product_wrapper .right,
+.display_block .product_wrapper .right { 
     background: #0e1731;
     width: 70px;
     color: #ffffff;
