@@ -28,7 +28,7 @@ class Header extends Component {
             <Button color="inherit">Customer Printing</Button>
           </Link>
 
-          <Link to="/items">
+          <Link to="/products">
             <Button color="inherit">All Products</Button>
           </Link>
         </Toolbar>
