@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tag } from '../../Utils/Tag';
+import { Tag } from '../../Utils/misc';
+import Blocks from '../Category/Blocks';
 
 const Catagory = () => {
   return (
@@ -8,7 +9,9 @@ const Catagory = () => {
         <Tag bck="#0e1731" size="50px" color="#ffffff">
           Main Products
         </Tag>
-        BLOCK TAG
+
+        <Blocks />
+
         <Tag
           bck="#ffffff"
           size="22px"

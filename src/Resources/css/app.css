@@ -226,18 +226,18 @@ footer .footer_discl {
     padding: 50px 0px;
 }
 
-.categories .home_matches {
+.categories .category {
     flex-wrap: wrap;
     display: flex;
     margin-top: 60px;
 }
 
-.categories .home_matches .item {
+.categories .category .item {
     width: 50%;
     margin: 35px 0px;
 }
 
-.categories .home_matches .item .wrapper {
+.categories .category .item .wrapper {
     padding-right:30px;
 }
 
