@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tag } from '../../Utils/Misc';
-import Blocks from './Blocks';
+import ProductShowcase from './ProductShowcase';
 
 const Products = () => {
   return (
@@ -10,7 +10,7 @@ const Products = () => {
           Main Products
         </Tag>
 
-        <Blocks />
+        <ProductShowcase />
 
         <Tag
           bck="#ffffff"

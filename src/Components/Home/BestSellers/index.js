@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import stripes from '../../../Resources/images/stripes.png';
 import { Tag } from '../../Utils/Misc';
 import Reveal from 'react-reveal/Reveal';
-import Cards from './Cards';
+import BestsellerShowcase from './BestsellerShowcase';
 
 class BestSeller extends Component {
   state = {
@@ -19,12 +19,12 @@ class BestSeller extends Component {
       >
         <div
           className="best_sellers"
-          style={{ background: `#ffffff url(${stripes}` }}
+          style={{ background: `#ffffff url(${stripes})` }}
         >
           <div className="containers">
             <div className="best_sellers_wrapper">
               <div className="home_card_wrapper">
-                <Cards show={this.state.show} />
+                <BestsellerShowcase show={this.state.show} />
               </div>
               <div className="home_text_wrapper">
                 <div>
