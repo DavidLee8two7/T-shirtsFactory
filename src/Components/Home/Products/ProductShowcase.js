@@ -5,7 +5,7 @@ import { firebaseLooper, reverseArray } from '../../Utils/Misc';
 import DisplayBlock from '../../Utils/DisplayBlock';
 import Slide from 'react-reveal/Slide';
 
-class Blocks extends Component {
+class ProductShowcase extends Component {
   state = {
     products: [],
   };
@@ -43,4 +43,4 @@ class Blocks extends Component {
   }
 }
 
-export default Blocks;
+export default ProductShowcase;
