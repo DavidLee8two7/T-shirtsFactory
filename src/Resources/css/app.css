@@ -281,8 +281,8 @@ footer .footer_discl {
 
 .display_block .product_wrapper .product_display .icon,
 .display_block .product_wrapper .product_display .icon {
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     background-size: cover !important;
 }
 .display_block .product_wrapper .product_display .product_name,
@@ -417,14 +417,14 @@ footer .footer_discl {
 ===============================*/
 
 
-.player_card_wrapper {
+.item_card_wrapper {
     background: #ffffff;
     border: 1px solid #ececec;
     width: 300px;
     padding: 10px 10px 20px 10px;
     font-family: 'Righteous';
 }
-.player_card_wrapper .player_card_thmb {
+.item_card_wrapper .item_card_thmb {
     border: 1px solid #eeeeee;
     width:100%;
     height:250px;
@@ -433,22 +433,22 @@ footer .footer_discl {
     background-size: contain !important;
 }
 
-.player_card_wrapper .player_card_nfo {
+.item_card_wrapper .item_card_info {
     position: relative;
 }
-.player_card_wrapper .player_card_number {
+.item_card_wrapper .item_card_number {
     color: #d6ecfe;
     font-size: 185px;
     text-align: right;
     line-height: 160px;
 }
 
-.player_card_wrapper .player_card_name {
+.item_card_wrapper .item_card_name {
     position: absolute;
     bottom: 0px;
 }
 
-.player_card_wrapper .player_card_name span { 
+.item_card_wrapper .item_card_name span { 
     display: block;
     font-size: 25px;
     color: #0d1831;

@@ -50,7 +50,7 @@ class BestSeller extends Component {
                       marginBottom: '20px',
                     }}
                   >
-                    The
+                    Best
                   </Tag>
                 </div>
                 <div>
@@ -63,7 +63,7 @@ class BestSeller extends Component {
                       marginBottom: '20px',
                     }}
                   >
-                    Bests
+                    Sellers
                   </Tag>
                 </div>
                 <div>
@@ -72,7 +72,7 @@ class BestSeller extends Component {
                     size="27px"
                     color="#0e1731"
                     link={true}
-                    linkto="/the_team"
+                    linkto="/the_bestsellers"
                     custom={{
                       display: 'inline-block',
                       marginBottom: '27px',

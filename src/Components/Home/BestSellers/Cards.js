@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import MainItem from '../../../Resources/images/main1.jpg';
+import ItemCard from '../../Utils/ItemCard';
 
 class Cards extends Component {
   state = {
@@ -50,7 +51,12 @@ class Cards extends Component {
                 bottom,
               }}
             >
-              Images goes here
+              <ItemCard
+                number="30"
+                name="Nike"
+                lastname="good tshirts"
+                bck={MainItem}
+              />
             </div>
           );
         }}
