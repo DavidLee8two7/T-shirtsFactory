@@ -72,7 +72,7 @@ class Signin extends Component {
         .auth()
         .signInWithEmailAndPassword(dataToSubmit.email, dataToSubmit.password)
         .then(() => {
-          console.log(dataToSubmit);
+          this.props.history.push('/dashboard');
         })
         .catch(error => {
           this.setState({
