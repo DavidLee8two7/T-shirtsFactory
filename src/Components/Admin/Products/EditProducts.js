@@ -4,6 +4,9 @@ import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../Utils/FormFields';
 import { validate } from '../../Utils/Misc';
 
+import { firebaseTeams, firebaseDB, firebaseProducts } from '../../../firebase';
+import { firebaseLooper } from '../../Utils/Misc';
+
 class EditProducts extends Component {
   state = {
     matchId: '',
@@ -16,7 +19,7 @@ class EditProducts extends Component {
         element: 'input',
         value: '',
         config: {
-          label: 'Event date',
+          label: 'Date',
           name: 'date_input',
           type: 'date',
         },
@@ -48,7 +51,7 @@ class EditProducts extends Component {
         value: '',
         config: {
           label: 'Result local',
-          name: 'result_locl_input',
+          name: 'result_local_input',
           type: 'text',
         },
         validation: {
@@ -78,8 +81,8 @@ class EditProducts extends Component {
         element: 'input',
         value: '',
         config: {
-          label: 'Result local',
-          name: 'result_locl_input',
+          label: 'Result away',
+          name: 'result_away_input',
           type: 'text',
         },
         validation: {
@@ -93,7 +96,7 @@ class EditProducts extends Component {
         element: 'input',
         value: '',
         config: {
-          label: 'Referee',
+          label: 'Shoes',
           name: 'referee_input',
           type: 'text',
         },
@@ -108,7 +111,7 @@ class EditProducts extends Component {
         element: 'input',
         value: '',
         config: {
-          label: 'stadium',
+          label: 'Accessory',
           name: 'stadium_input',
           type: 'text',
         },
@@ -123,7 +126,7 @@ class EditProducts extends Component {
         element: 'select',
         value: '',
         config: {
-          label: 'result',
+          label: 'Size',
           name: 'select_result',
           type: 'select',
           options: [
@@ -148,7 +151,7 @@ class EditProducts extends Component {
         element: 'select',
         value: '',
         config: {
-          label: 'Game played ?',
+          label: 'Publish?',
           name: 'select_played',
           type: 'select',
           options: [{ key: 'YES', value: 'YES' }, { key: 'NO', value: 'NO' }],
@@ -162,6 +165,73 @@ class EditProducts extends Component {
       },
     },
   };
+
+  updateForm(element) {
+    const newFormdata = { ...this.state.formdata };
+    const newElement = { ...newFormdata[element.id] };
+
+    newElement.value = element.event.target.value;
+
+    let validateElement = validate(newElement);
+    newElement.valid = validateElement[0];
+    newElement.validationMessage = validateElement[1];
+
+    newFormdata[element.id] = newElement;
+
+    this.setState({ formError: false, formdata: newFormdata });
+  }
+
+  updateFields(match, teamOptions, teams, type, matchId) {
+    const newFormdata = { ...this.state.formdata };
+
+    for (let key in newFormdata) {
+      if (match) {
+        newFormdata[key].value = match[key];
+        newFormdata[key].valid = true;
+      }
+      if (key === 'local' || key === 'away') {
+        newFormdata[key].config.options = teamOptions;
+      }
+    }
+
+    this.setState({
+      matchId,
+      formType: type,
+      formdata: newFormdata,
+      teams,
+    });
+  }
+
+  componentDidMount() {
+    const matchId = this.props.match.params.id;
+    const getTeams = (match, type) => {
+      firebaseTeams.once('value').then(snapshot => {
+        const teams = firebaseLooper(snapshot);
+        const teamOptions = [];
+
+        snapshot.forEach(childSnapshot => {
+          teamOptions.push({
+            key: childSnapshot.val().shortName,
+            value: childSnapshot.val().shortName,
+          });
+        });
+        this.updateFields(match, teamOptions, teams, type, matchId);
+      });
+    };
+
+    if (!matchId) {
+      // ADD Match
+    } else {
+      firebaseDB
+        .ref(`matches/${matchId}`)
+        .once('value')
+        .then(snapshot => {
+          const match = snapshot.val();
+
+          getTeams(match, 'Edit Product');
+        });
+    }
+  }
 
   render() {
     return (
@@ -177,7 +247,7 @@ class EditProducts extends Component {
               />
 
               <div className="select_team_layout">
-                <div className="label_inputs">Local</div>
+                <div className="label_inputs">Shirts</div>
                 <div className="wrapper">
                   <div className="left">
                     <FormField
@@ -197,7 +267,7 @@ class EditProducts extends Component {
               </div>
 
               <div className="select_team_layout">
-                <div className="label_inputs">Away</div>
+                <div className="label_inputs">Pants</div>
                 <div className="wrapper">
                   <div className="left">
                     <FormField
