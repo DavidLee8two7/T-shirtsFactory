@@ -10,7 +10,7 @@ import SignIn from './Components/Signin';
 
 import Dashboard from './Components/Admin/Dashboard';
 import AdminProducts from './Components/Admin/Products';
-import EditProduct from './Components/Admin/Products/EditProducts';
+import EditProducts from './Components/Admin/Products/EditProducts';
 
 const Routes = props => {
   return (
@@ -18,15 +18,9 @@ const Routes = props => {
       <Switch>
         <PrivateRoute
           {...props}
-          path="/admin_products/edit/"
+          path="/admin_products/edit_product/:id"
           exact
-          component={EditProduct}
-        />
-        <PrivateRoute
-          {...props}
-          path="/admin_products/edit/:id"
-          exact
-          component={EditProduct}
+          component={EditProducts}
         />
         <PrivateRoute
           {...props}
