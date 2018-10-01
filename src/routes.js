@@ -10,11 +10,24 @@ import SignIn from './Components/Signin';
 
 import Dashboard from './Components/Admin/Dashboard';
 import AdminProducts from './Components/Admin/Products';
+import EditProduct from './Components/Admin/Products/EditProducts';
 
 const Routes = props => {
   return (
     <Layout>
       <Switch>
+        <PrivateRoute
+          {...props}
+          path="/admin_products/edit/"
+          exact
+          component={EditProduct}
+        />
+        <PrivateRoute
+          {...props}
+          path="/admin_products/edit/:id"
+          exact
+          component={EditProduct}
+        />
         <PrivateRoute
           {...props}
           path="/admin_products"
