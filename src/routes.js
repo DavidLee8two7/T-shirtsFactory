@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Hoc/Layout';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import PrivateRoute from './Components/AuthRoutes/PrivateRoutes';
 import PublicRoute from './Components/AuthRoutes/PublicRoutes';
@@ -9,11 +9,18 @@ import Home from './Components/Home';
 import SignIn from './Components/Signin';
 
 import Dashboard from './Components/Admin/Dashboard';
+import AdminProducts from './Components/Admin/Products';
 
 const Routes = props => {
   return (
     <Layout>
       <Switch>
+        <PrivateRoute
+          {...props}
+          path="/admin_products"
+          exact
+          component={AdminProducts}
+        />
         <PrivateRoute
           {...props}
           path="/dashboard"
