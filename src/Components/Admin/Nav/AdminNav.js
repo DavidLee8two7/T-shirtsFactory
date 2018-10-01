@@ -6,12 +6,12 @@ import { firebase } from '../../../firebase';
 const AdminNav = () => {
   const links = [
     {
-      title: 'Items',
-      linkTo: '/admin_items',
+      title: 'Products',
+      linkTo: '/admin_products',
     },
     {
-      title: 'Edit Items',
-      linkTo: '/admin_items/edit',
+      title: 'Edit products',
+      linkTo: '/admin_products/edit',
     },
     {
       title: 'Category',

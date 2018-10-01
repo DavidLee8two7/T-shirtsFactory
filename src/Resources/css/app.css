@@ -581,12 +581,12 @@ footer .footer_discl {
     margin: 20px 0px;
 }
 
-.admin_container .matches_tag_red {
+.admin_container .products_tag_red {
     font-weight: 700;
     color: #F44336;
 }
 
-.admin_container .matches_tag_green {
+.admin_container .products_tag_green {
     font-weight: 700;
     color: #4CAF50;
 }
