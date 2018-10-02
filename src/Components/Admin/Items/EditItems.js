@@ -135,7 +135,20 @@ class EditItems extends Component {
     }
 
     if (formIsValid) {
-      /// submit form
+      if (this.state.formType === 'Edit item') {
+        ///
+      } else {
+        firebaseItems
+          .push(dataToSubmit)
+          .then(() => {
+            this.props.history.push('/admin_items');
+          })
+          .catch(error => {
+            this.setState({
+              formError: true,
+            });
+          });
+      }
     } else {
       this.setState({
         formError: true,
