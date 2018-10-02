@@ -143,14 +143,21 @@ class EditItems extends Component {
     }
   }
 
-  resetImage = () => {};
+  resetImage = () => {
+    const newFormdata = { ...this.state.formdata };
+    newFormdata['image'].value = '';
+    newFormdata['image'].valid = false;
+    this.setState({
+      defaultImg: '',
+      formdata: newFormdata,
+    });
+  };
 
   storeFilename = filename => {
     this.updateForm({ id: 'image' }, filename);
   };
 
   render() {
-    console.log(this.state.formdata);
     return (
       <AdminLayout>
         <div className="editItems_dialog_wrapper">
