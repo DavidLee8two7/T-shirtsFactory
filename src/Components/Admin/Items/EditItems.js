@@ -87,7 +87,7 @@ class EditItems extends Component {
         validation: {
           required: true,
         },
-        valid: true,
+        valid: false,
       },
     },
   };
@@ -104,11 +104,15 @@ class EditItems extends Component {
     }
   }
 
-  updateForm(element) {
+  updateForm(element, content = '') {
     const newFormdata = { ...this.state.formdata };
     const newElement = { ...newFormdata[element.id] };
 
-    newElement.value = element.event.target.value;
+    if (content === '') {
+      newElement.value = element.event.target.value;
+    } else {
+      newElement.value = content;
+    }
 
     let validateElement = validate(newElement);
     newElement.valid = validateElement[0];
@@ -141,9 +145,12 @@ class EditItems extends Component {
 
   resetImage = () => {};
 
-  storeFileName = () => {};
+  storeFilename = filename => {
+    this.updateForm({ id: 'image' }, filename);
+  };
 
   render() {
+    console.log(this.state.formdata);
     return (
       <AdminLayout>
         <div className="editItems_dialog_wrapper">
@@ -156,7 +163,7 @@ class EditItems extends Component {
                 defaultImg={this.state.defaultImg}
                 defaultImgName={this.state.formdata.image.value}
                 resetImage={() => this.resetImage()}
-                fileName={fileName => this.storeFileName(fileName)}
+                filename={filename => this.storeFilename(filename)}
               />
 
               <FormField
