@@ -18,6 +18,7 @@ const firebaseDB = firebase.database();
 const firebaseProducts = firebaseDB.ref('matches');
 const firebasePromotions = firebaseDB.ref('promotions');
 const firebaseTeams = firebaseDB.ref('teams');
+const firebaseItems = firebaseDB.ref('players');
 
 export {
   firebase,
@@ -25,4 +26,5 @@ export {
   firebasePromotions,
   firebaseTeams,
   firebaseDB,
+  firebaseItems,
 };

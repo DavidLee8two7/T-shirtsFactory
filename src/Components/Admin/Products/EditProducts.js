@@ -204,7 +204,7 @@ class EditProducts extends Component {
 
   componentDidMount() {
     const matchId = this.props.match.params.id;
-    const getTeams = (match, type) => {
+    const getProducts = (match, type) => {
       firebaseTeams.once('value').then(snapshot => {
         const teams = firebaseLooper(snapshot);
         const teamOptions = [];
@@ -220,7 +220,7 @@ class EditProducts extends Component {
     };
 
     if (!matchId) {
-      // ADD Match
+      getProducts(false, 'Add Product');
     } else {
       firebaseDB
         .ref(`matches/${matchId}`)
@@ -228,7 +228,7 @@ class EditProducts extends Component {
         .then(snapshot => {
           const match = snapshot.val();
 
-          getTeams(match, 'Edit Product');
+          getProducts(match, 'Edit Product');
         });
     }
   }
@@ -277,6 +277,14 @@ class EditProducts extends Component {
             });
           });
       } else {
+        firebaseProducts
+          .push(dataToSubmit)
+          .then(() => {
+            this.props.history.push('/admin_products');
+          })
+          .catch(error => {
+            this.setState({ formError: true });
+          });
       }
     } else {
       this.setState({
