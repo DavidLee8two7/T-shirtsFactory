@@ -49,12 +49,12 @@ class AdminItems extends Component {
                   ? this.state.items.map((item, i) => (
                       <TableRow key={i}>
                         <TableCell>
-                          <Link to={`/admin_items/add_item/${item.id}`}>
+                          <Link to={`/admin_items/edit_item/${item.id}`}>
                             {item.name}
                           </Link>
                         </TableCell>
                         <TableCell>
-                          <Link to={`/admin_items/add_item/${item.id}`}>
+                          <Link to={`/admin_items/edit_item/${item.id}`}>
                             {item.lastname}
                           </Link>
                         </TableCell>
