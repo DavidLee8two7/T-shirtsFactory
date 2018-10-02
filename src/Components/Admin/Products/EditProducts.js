@@ -233,10 +233,62 @@ class EditProducts extends Component {
     }
   }
 
+  successForm(message) {
+    this.setState({
+      formSuccess: message,
+    });
+
+    setTimeout(() => {
+      this.setState({ formSuccess: '' });
+    }, 2000);
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+
+    let dataToSubmit = {};
+    let formIsValid = true;
+
+    for (let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    }
+
+    this.state.teams.forEach(team => {
+      if (team.shortName === dataToSubmit.local) {
+        dataToSubmit['localThmb'] = team.thmb;
+      }
+      if (team.shortName === dataToSubmit.away) {
+        dataToSubmit['awayThmb'] = team.thmb;
+      }
+    });
+
+    if (formIsValid) {
+      if (this.state.formType === 'Edit Product') {
+        firebaseDB
+          .ref(`matches/${this.state.matchId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Updated correctly');
+          })
+          .catch(error => {
+            this.setState({
+              formError: true,
+            });
+          });
+      } else {
+      }
+    } else {
+      this.setState({
+        formError: true,
+      });
+    }
+  }
+
   render() {
     return (
       <AdminLayout>
-        <div className="editmatch_dialog_wrapper">
+        <div className="editproduct_dialog_wrapper">
           <h2>{this.state.formType}</h2>
           <div>
             <form onSubmit={event => this.submitForm(event)}>
@@ -246,7 +298,7 @@ class EditProducts extends Component {
                 change={element => this.updateForm(element)}
               />
 
-              <div className="select_team_layout">
+              <div className="select_product_layout">
                 <div className="label_inputs">Shirts</div>
                 <div className="wrapper">
                   <div className="left">
@@ -266,7 +318,7 @@ class EditProducts extends Component {
                 </div>
               </div>
 
-              <div className="select_team_layout">
+              <div className="select_product_layout">
                 <div className="label_inputs">Pants</div>
                 <div className="wrapper">
                   <div className="left">
