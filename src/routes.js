@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import SignIn from './Components/Signin';
 import CustomPrinting from './Components/CustomPrinting';
 import AllProducts from './Components/AllProducts';
+import NotFound from './Components/Utils/NotFound';
 
 import Dashboard from './Components/Admin/Dashboard';
 import AdminProducts from './Components/Admin/Products';
@@ -90,6 +91,7 @@ const Routes = props => {
           exact
           component={Home}
         />
+        <PublicRoute {...props} restricted={false} component={NotFound} />
       </Switch>
     </Layout>
   );
