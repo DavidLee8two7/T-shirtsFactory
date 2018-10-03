@@ -8,6 +8,7 @@ import PublicRoute from './Components/AuthRoutes/PublicRoutes';
 import Home from './Components/Home';
 import SignIn from './Components/Signin';
 import CustomPrinting from './Components/CustomPrinting';
+import AllProducts from './Components/AllProducts';
 
 import Dashboard from './Components/Admin/Dashboard';
 import AdminProducts from './Components/Admin/Products';
@@ -67,6 +68,13 @@ const Routes = props => {
           path="/sign_in"
           exact
           component={SignIn}
+        />
+        <PublicRoute
+          {...props}
+          restricted={false}
+          path="/products"
+          exact
+          component={AllProducts}
         />
         <PublicRoute
           {...props}

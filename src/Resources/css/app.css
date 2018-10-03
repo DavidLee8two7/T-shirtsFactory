@@ -302,7 +302,7 @@ footer .footer_discl {
     padding-top: 6px;
 } 
 
-.match_box_big {
+.product_box_big {
     width:100%;
     border-bottom: 2px solid #98c6e9;
     padding: 20px;
@@ -311,35 +311,35 @@ footer .footer_discl {
     clear: both;
 }
 
-.match_box_big .block_wraper {
+.product_box_big .block_wrapper {
     display: inline-block;
     margin-right: 50px;
     float: left;
 }
 
-.match_box_big .block {
+.product_box_big .block {
     display: flex;
 }
 
-.match_box_big .icon{
+.product_box_big .icon{
     width: 50px;
     height: 50px;
     background-size: cover !important;
 }
 
-.match_box_big .block .team,
-.match_box_big .block .result {
+.product_box_big .block .item,
+.product_box_big .block .price {
     font-size: 21px;
     line-height: 51px;
     margin-left: 18px;
     font-weight: 300;
 }
 
-.match_box_big .block .result {
+.product_box_big .block .price {
     font-weight: 500;
 }
 
-.block_wraper.nfo {
+.block_wrapper.nfo {
     border-left: 1px solid #98c6e9;
     height: 102px;
     padding-left: 10px;
@@ -347,21 +347,21 @@ footer .footer_discl {
     color: #5e5e5e;
 }
 
-.block_wraper.nfo div {
+.block_wrapper.nfo div {
     margin: 5px 0px;
 }
 
-.match_filters {
+.product_filters {
      display: flex;
      border-bottom: 1px solid #01285e;
      background: #dff1ff;
 }
-.match_filters .tag {
+.product_filters .tag {
     font-weight: 300;
     margin-bottom: 5px;
     color: #656565;
 }
-.match_filters .option {
+.product_filters .option {
     background: #ffffff;
     padding: 5px 9px;
     border-radius: 3px;
@@ -370,18 +370,18 @@ footer .footer_discl {
     cursor: pointer;
 }
 
-.match_filters .option.active {
+.product_filters .option.active {
     background: #62a2d3;
     color: #fff;
 }
 
-.match_filters_box {
+.product_filters_box {
     padding: 10px 20px;
     border-right: 1px solid #01285e;
     background: #dff1ff;
 }
 
-.match_filters .cont {
+.product_filters .cont {
     display: flex;
 }
 
@@ -523,26 +523,26 @@ footer .footer_discl {
          THE MATCHES
 ===============================*/
 
-.the_matches_container {
+.products_container {
     margin-top: 96px;
 }
 
-.the_matches_wrapper {
+.products_wrapper {
     display: flex;
 }
 
-.the_matches_wrapper .left {
+.products_wrapper .left {
     flex-grow: 1;
 }
 
-.the_matches_wrapper .right {
+.products_wrapper .right {
    width:400px;
 }
 
-.league_table_wrapper {
+.product_table_wrapper {
     border-left: 1px solid #98c6e9;
 }
-.league_table_wrapper .title {
+.product_table_wrapper .title {
     padding: 22px;
     font-size: 22px;
     color: #ffffff;
@@ -550,7 +550,7 @@ footer .footer_discl {
     border-bottom: 1px solid #01285e;
 }
 
-.the_matches_wrapper .progress {
+.products_wrapper .progress {
     text-align: center;
     padding: 60px 0px;
 }
@@ -628,7 +628,7 @@ footer .footer_discl {
 }
 
 /*=============================
-         THE TEAM
+         THE item
 ===============================*/
 
 .customDesign_container {
@@ -638,18 +638,18 @@ footer .footer_discl {
     min-height:100vh;
 }
 
-.team_category_wrapper .title {
+.customDesign_wrapper .title {
     font-size: 90px;
     margin: 30px 0px;
     font-family: 'Righteous', cursive;
     color: #d5ebfe;
 }
 
-.team_category_wrapper .team_cards {
+.customDesign_wrapper .title_cards {
     display: flex;
     flex-wrap: wrap;
 }
-.team_category_wrapper .team_cards .item{
+.customDesign_wrapper .title_cards .item{
     margin-right: 20px;
     margin-bottom: 20px;
 }
