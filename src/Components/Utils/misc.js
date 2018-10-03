@@ -33,6 +33,7 @@ export const firebaseLooper = snapshot => {
       id: childSnapshot.key,
     });
   });
+
   return data;
 };
 

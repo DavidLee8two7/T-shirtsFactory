@@ -223,7 +223,6 @@ class EditItems extends Component {
   };
 
   render() {
-    console.log(this.state.defaultImg);
     return (
       <AdminLayout>
         <div className="editItems_dialog_wrapper">
