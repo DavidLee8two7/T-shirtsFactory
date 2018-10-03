@@ -72,7 +72,7 @@ class BestSeller extends Component {
                     size="27px"
                     color="#0e1731"
                     link={true}
-                    linkto="/the_bestsellers"
+                    linkto="/custom_printing"
                     custom={{
                       display: 'inline-block',
                       marginBottom: '27px',
