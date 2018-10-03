@@ -598,23 +598,23 @@ footer .footer_discl {
     font-size: 40px;
 }
 
-.editmatch_dialog_wrapper,
-.editplayers_dialog_wrapper {
+.editproduct_dialog_wrapper,
+.editItems_dialog_wrapper {
     padding: 20px;
     width: 480px;
 }
 
  
-.select_team_layout .wrapper{
+.select_product_layout .wrapper{
     display: flex;
 }
 
-.select_team_layout .wrapper .left {
+.select_product_layout .wrapper .left {
     flex-grow: 1;
 }
 
-.select_team_layout input[name=result_local_input],
-.select_team_layout input[name=result_away_input] {
+.select_product_layout input[name=result_local_input],
+.select_product_layout input[name=result_away_input] {
     width: 60px;
     text-align: center;
     background: #98c6e9;
@@ -631,7 +631,7 @@ footer .footer_discl {
          THE TEAM
 ===============================*/
 
-.the_team_container {
+.customDesign_container {
     margin-top: 96px;
     padding: 20px;
     background-size: 5px 5px !important;

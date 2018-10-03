@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AdminLayout from '../../../Hoc/AdminLayout';
 
-import { firebaseProducts } from '../../../firebase';
+import { firebaseItems } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../Utils/Misc';
 
 import Table from '@material-ui/core/Table';
@@ -16,16 +16,16 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 class AdminItems extends Component {
   state = {
     isloading: true,
-    products: [],
+    items: [],
   };
 
   componentDidMount() {
-    firebaseProducts.once('value').then(snapshot => {
+    firebaseItems.once('value').then(snapshot => {
       const items = firebaseLooper(snapshot);
 
       this.setState({
         isloading: false,
-        products: reverseArray(items),
+        items: reverseArray(items),
       });
     });
   }
@@ -38,39 +38,28 @@ class AdminItems extends Component {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Date</TableCell>
-                  <TableCell>Product</TableCell>
+                  <TableCell>Brand</TableCell>
+                  <TableCell>Item Name</TableCell>
                   <TableCell>Price</TableCell>
-                  <TableCell>Published</TableCell>
+                  <TableCell>Description</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {this.state.products
-                  ? this.state.products.map((product, i) => (
+                {this.state.items
+                  ? this.state.items.map((item, i) => (
                       <TableRow key={i}>
-                        <TableCell>{product.date}</TableCell>
                         <TableCell>
-                          <Link
-                            to={`/admin_products/edit_product/${product.id}`}
-                          >
-                            {product.away} <strong>-</strong> {product.local}
+                          <Link to={`/admin_items/edit_item/${item.id}`}>
+                            {item.name}
                           </Link>
                         </TableCell>
                         <TableCell>
-                          <strong>$ </strong>
-                          {product.resultLocal}
+                          <Link to={`/admin_items/edit_item/${item.id}`}>
+                            {item.lastname}
+                          </Link>
                         </TableCell>
-                        <TableCell>
-                          {product.final === 'Yes' ? (
-                            <span className="products_tag_green">
-                              Available
-                            </span>
-                          ) : (
-                            <span className="products_tag_red">
-                              Not Available
-                            </span>
-                          )}
-                        </TableCell>
+                        <TableCell>{item.number}</TableCell>
+                        <TableCell>{item.position}</TableCell>
                       </TableRow>
                     ))
                   : null}

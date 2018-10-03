@@ -11,15 +11,15 @@ const AdminNav = () => {
     },
     {
       title: 'Edit products',
-      linkTo: '/admin_products/edit',
+      linkTo: '/admin_products/edit_product',
     },
     {
-      title: 'Category',
-      linkTo: '/admin_category',
+      title: 'Items',
+      linkTo: '/admin_items',
     },
     {
-      title: 'Edit Category',
-      linkTo: '/admin_category/edit',
+      title: 'Edit Items',
+      linkTo: '/admin_items/edit_item/',
     },
   ];
 

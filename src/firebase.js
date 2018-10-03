@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
+import 'firebase/storage';
 
 const config = {
   apiKey: 'AIzaSyCFJtYPQLzsntWDfZJCPeRKpYcSSq7Govs',
@@ -17,5 +18,14 @@ firebase.initializeApp(config);
 const firebaseDB = firebase.database();
 const firebaseProducts = firebaseDB.ref('matches');
 const firebasePromotions = firebaseDB.ref('promotions');
+const firebaseTeams = firebaseDB.ref('teams');
+const firebaseItems = firebaseDB.ref('players');
 
-export { firebase, firebaseProducts, firebasePromotions };
+export {
+  firebase,
+  firebaseProducts,
+  firebasePromotions,
+  firebaseTeams,
+  firebaseItems,
+  firebaseDB,
+};

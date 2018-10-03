@@ -25,7 +25,7 @@ class Header extends Component {
           </div>
 
           <Link to="/custom_printing">
-            <Button color="inherit">Customer Printing</Button>
+            <Button color="inherit">Custom Printing</Button>
           </Link>
 
           <Link to="/products">
