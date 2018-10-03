@@ -92,15 +92,45 @@ class EditItems extends Component {
     },
   };
 
+  updateFields = (item, itemId, formType, defaultImg) => {
+    const newFormdata = { ...this.state.formdata };
+
+    for (let key in newFormdata) {
+      newFormdata[key].value = item[key];
+      newFormdata[key].valid = true;
+    }
+
+    this.setState({
+      itemId,
+      defaultImg,
+      formType,
+      formdata: newFormdata,
+    });
+  };
+
   componentDidMount() {
     const itemId = this.props.match.params.id;
 
     if (!itemId) {
       this.setState({
-        formType: 'Add Item',
+        formType: 'Add item',
       });
     } else {
-      ///
+      firebaseDB
+        .ref(`players/${itemId}`)
+        .once('value')
+        .then(snapshot => {
+          const itemData = snapshot.val();
+
+          firebase
+            .storage()
+            .ref('items')
+            .child(itemData.image)
+            .getDownloadURL()
+            .then(url => {
+              this.updateFields(itemData, itemId, 'Edit item', url);
+            });
+        });
     }
   }
 
@@ -123,6 +153,17 @@ class EditItems extends Component {
     this.setState({ formError: false, formdata: newFormdata });
   }
 
+  successForm = message => {
+    this.setState({
+      formSuccess: message,
+    });
+    setTimeout(() => {
+      this.setState({
+        formSuccess: '',
+      });
+    }, 2000);
+  };
+
   submitForm(event) {
     event.preventDefault();
 
@@ -135,8 +176,18 @@ class EditItems extends Component {
     }
 
     if (formIsValid) {
+      console.log(firebaseItems);
+
       if (this.state.formType === 'Edit item') {
-        ///
+        firebaseDB
+          .ref(`players/${this.state.itemId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Update correctly');
+          })
+          .catch(error => {
+            this.setState({ formError: true });
+          });
       } else {
         firebaseItems
           .push(dataToSubmit)
@@ -160,6 +211,7 @@ class EditItems extends Component {
     const newFormdata = { ...this.state.formdata };
     newFormdata['image'].value = '';
     newFormdata['image'].valid = false;
+
     this.setState({
       defaultImg: '',
       formdata: newFormdata,
@@ -171,6 +223,7 @@ class EditItems extends Component {
   };
 
   render() {
+    console.log(this.state.defaultImg);
     return (
       <AdminLayout>
         <div className="editItems_dialog_wrapper">

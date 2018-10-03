@@ -22,10 +22,10 @@ class AdminItems extends Component {
   componentDidMount() {
     firebaseProducts.once('value').then(snapshot => {
       const items = firebaseLooper(snapshot);
-      const reversedItems = reverseArray(items);
+
       this.setState({
         isloading: false,
-        products: reversedItems,
+        products: reverseArray(items),
       });
     });
   }
@@ -48,7 +48,7 @@ class AdminItems extends Component {
                 {this.state.products
                   ? this.state.products.map((product, i) => (
                       <TableRow key={i}>
-                        <TableCell>{[product.date]}</TableCell>
+                        <TableCell>{product.date}</TableCell>
                         <TableCell>
                           <Link
                             to={`/admin_products/edit_product/${product.id}`}

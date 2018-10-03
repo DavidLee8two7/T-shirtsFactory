@@ -40,7 +40,7 @@ class Fileuploader extends Component {
     this.props.filename(filename);
   };
 
-  static getDerivdedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props, state) {
     if (props.defaultImg) {
       return (state = {
         name: props.defaultImgName,

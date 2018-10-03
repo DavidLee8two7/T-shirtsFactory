@@ -26,6 +26,6 @@ export {
   firebaseProducts,
   firebasePromotions,
   firebaseTeams,
-  firebaseDB,
   firebaseItems,
+  firebaseDB,
 };

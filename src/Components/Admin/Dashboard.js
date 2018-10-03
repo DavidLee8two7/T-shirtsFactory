@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <AdminLayout>
       <div className="user_dashboard">
-        <div>dashboard</div>
+        <div>Admin Dashboard</div>
       </div>
     </AdminLayout>
   );

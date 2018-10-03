@@ -16,7 +16,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 class AdminItems extends Component {
   state = {
     isloading: true,
-    products: [],
+    items: [],
   };
 
   componentDidMount() {

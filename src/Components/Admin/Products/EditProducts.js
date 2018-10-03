@@ -172,9 +172,9 @@ class EditProducts extends Component {
 
     newElement.value = element.event.target.value;
 
-    let validateElement = validate(newElement);
-    newElement.valid = validateElement[0];
-    newElement.validationMessage = validateElement[1];
+    let validData = validate(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
 
     newFormdata[element.id] = newElement;
 
@@ -227,7 +227,6 @@ class EditProducts extends Component {
         .once('value')
         .then(snapshot => {
           const match = snapshot.val();
-
           getProducts(match, 'Edit Product');
         });
     }
@@ -239,7 +238,9 @@ class EditProducts extends Component {
     });
 
     setTimeout(() => {
-      this.setState({ formSuccess: '' });
+      this.setState({
+        formSuccess: '',
+      });
     }, 2000);
   }
 
