@@ -13,7 +13,7 @@ class AllProducts extends Component {
     products: [],
     filterProducts: [],
     itemFilter: 'All',
-    resultFilter: 'All',
+    sizeFilter: 'All',
   };
 
   componentDidMount() {
@@ -37,7 +37,19 @@ class AllProducts extends Component {
     this.setState({
       filterProducts: published === 'All' ? this.state.products : list,
       itemFilter: published,
-      resultFilter: 'All',
+      sizeFilter: 'All',
+    });
+  };
+
+  showSizes = size => {
+    const list = this.state.products.filter(product => {
+      return product.result === size;
+    });
+
+    this.setState({
+      filterProducts: size === 'All' ? this.state.products : list,
+      itemFilter: 'All',
+      sizeFilter: size,
     });
   };
 
@@ -49,25 +61,68 @@ class AllProducts extends Component {
           <div className="left">
             <div className="product_filters">
               <div className="product_filters_box">
-                <div className="tag">Show Products</div>
+                <div className="tag">Publish Products</div>
                 <div className="cont">
                   <div
-                    className={`option`}
+                    className={`option ${
+                      state.itemFilter === 'All' ? 'active' : ''
+                    }`}
                     onClick={() => this.showPublished('All')}
                   >
                     All
                   </div>
                   <div
-                    className={`option`}
+                    className={`option ${
+                      state.itemFilter === 'Yes' ? 'active' : ''
+                    }`}
                     onClick={() => this.showPublished('Yes')}
                   >
                     Yes
                   </div>
                   <div
-                    className={`option`}
+                    className={`option ${
+                      state.itemFilter === 'No' ? 'active' : ''
+                    }`}
                     onClick={() => this.showPublished('No')}
                   >
                     No
+                  </div>
+                </div>
+              </div>
+              <div className="product_filters_box">
+                <div className="tag">Show Sizes</div>
+                <div className="cont">
+                  <div
+                    className={`option ${
+                      state.sizeFilter === 'All' ? 'active' : ''
+                    }`}
+                    onClick={() => this.showSizes('All')}
+                  >
+                    All
+                  </div>
+                  <div
+                    className={`option ${
+                      state.sizeFilter === 'W' ? 'active' : ''
+                    }`}
+                    onClick={() => this.showSizes('W')}
+                  >
+                    W
+                  </div>
+                  <div
+                    className={`option ${
+                      state.sizeFilter === 'L' ? 'active' : ''
+                    }`}
+                    onClick={() => this.showSizes('L')}
+                  >
+                    L
+                  </div>
+                  <div
+                    className={`option ${
+                      state.sizeFilter === 'D' ? 'active' : ''
+                    }`}
+                    onClick={() => this.showSizes('D')}
+                  >
+                    D
                   </div>
                 </div>
               </div>
