@@ -71,35 +71,35 @@ class CustomPrinting extends Component {
       >
         {!this.state.loading ? (
           <div>
-            <div className="team_category_wrapper">
+            <div className="customDesign_wrapper">
               <div className="title">level1</div>
-              <div className="team_cards">
+              <div className="title_cards">
                 {this.showDesignsByCategory('level1')}
               </div>
             </div>
 
-            <div className="team_category_wrapper">
+            <div className="customDesign_wrapper">
               <div className="title">level2</div>
-              <div className="team_cards">
+              <div className="title_cards">
                 {this.showDesignsByCategory('level2')}
               </div>
             </div>
 
-            <div className="team_category_wrapper">
+            <div className="customDesign_wrapper">
               <div className="title">level3</div>
-              <div className="team_cards">
+              <div className="title_cards">
                 {this.showDesignsByCategory('level3')}
               </div>
             </div>
 
-            <div className="team_category_wrapper">
+            <div className="customDesign_wrapper">
               <div className="title">level4</div>
-              <div className="team_cards">
+              <div className="title_cards">
                 {this.showDesignsByCategory('level4')}
               </div>
             </div>
 
-            <div className="team_category_wrapper">
+            <div className="customDesign_wrapper">
               <div className="title">level5</div>
               <div className="team_cards">
                 {this.showDesignsByCategory('level5')}
