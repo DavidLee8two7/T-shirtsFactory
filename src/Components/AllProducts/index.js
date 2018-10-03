@@ -28,13 +28,50 @@ class AllProducts extends Component {
     });
   }
 
+  showPublished = published => {
+    const list = this.state.products.filter(product => {
+      {
+        return product.final === published;
+      }
+    });
+    this.setState({
+      filterProducts: published === 'All' ? this.state.products : list,
+      itemFilter: published,
+      resultFilter: 'All',
+    });
+  };
+
   render() {
     const state = this.state;
     return (
       <div className="products_container">
         <div className="products_wrapper">
           <div className="left">
-            <div className="product_filters" />
+            <div className="product_filters">
+              <div className="product_filters_box">
+                <div className="tag">Show Products</div>
+                <div className="cont">
+                  <div
+                    className={`option`}
+                    onClick={() => this.showPublished('All')}
+                  >
+                    All
+                  </div>
+                  <div
+                    className={`option`}
+                    onClick={() => this.showPublished('Yes')}
+                  >
+                    Yes
+                  </div>
+                  <div
+                    className={`option`}
+                    onClick={() => this.showPublished('No')}
+                  >
+                    No
+                  </div>
+                </div>
+              </div>
+            </div>
             <ProductList products={state.filterProducts} />
           </div>
           <div className="right">

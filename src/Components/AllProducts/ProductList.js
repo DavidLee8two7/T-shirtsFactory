@@ -9,7 +9,7 @@ class ProductList extends Component {
 
   static getDerivedStateFromProps(props, state) {
     return (state = {
-      productList: props.matches,
+      productList: props.products,
     });
   }
 
@@ -43,13 +43,52 @@ class ProductList extends Component {
             {nodes.map(({ key, data, state: { x, opacity } }) => (
               <div
                 key={key}
-                className="match_box_big"
+                className="product_box_big"
                 style={{
                   opacity,
                   transform: `translate(${x}px)`,
                 }}
               >
-                inser component here
+                <div className="block_wrapper">
+                  <div className="block">
+                    <div
+                      className="icon"
+                      style={{
+                        background: `url(/images/products/brand_logos/${
+                          data.localThmb
+                        }.png)`,
+                      }}
+                    />
+                    <div className="item"> {data.local} </div>
+                    <div className="price"> {data.resultLocal} </div>
+                  </div>
+                  <div className="block">
+                    <div
+                      className="icon"
+                      style={{
+                        background: `url(/images/products/brand_logos/${
+                          data.awayThmb
+                        }.png)`,
+                      }}
+                    />
+                    <div className="item"> {data.away} </div>
+                    <div className="price"> {data.resultAway} </div>
+                  </div>
+                </div>
+                <div className="block_wrapper nfo">
+                  <div>
+                    {' '}
+                    <strong>Date:</strong> {data.date}{' '}
+                  </div>
+                  <div>
+                    {' '}
+                    <strong>stadium:</strong> {data.stadium}{' '}
+                  </div>
+                  <div>
+                    {' '}
+                    <strong>Referee:</strong> {data.Referee}{' '}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -58,7 +97,6 @@ class ProductList extends Component {
     ) : null;
 
   render() {
-    console.log();
     return <div>{this.showProducts()}</div>;
   }
 }

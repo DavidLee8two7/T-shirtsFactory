@@ -101,7 +101,7 @@ class CustomPrinting extends Component {
 
             <div className="customDesign_wrapper">
               <div className="title">level5</div>
-              <div className="team_cards">
+              <div className="title_cards">
                 {this.showDesignsByCategory('level5')}
               </div>
             </div>
