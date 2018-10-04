@@ -20,7 +20,7 @@ class Header extends Component {
           backgroundColor: 'var(--color-primary)',
           boxShadow: 'none',
           padding: '3px 0',
-          borderBottom: '3px solid var(--color-primary-dark)',
+          borderBottom: 'var(--line)',
         }}
       >
         <Toolbar style={{ display: 'flex' }}>
