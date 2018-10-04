@@ -7,29 +7,35 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
+    const buttonStyle = {
+      color: 'var(--color-primary-dark)',
+      fontSize: '1.5rem',
+      fontWeight: '400',
+    };
+
     return (
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: '#98c5e9',
+          backgroundColor: 'var(--color-primary)',
           boxShadow: 'none',
-          padding: '10px 0',
-          borderBottom: '2px solid #00285e',
+          padding: '3px 0',
+          borderBottom: 'var(--line)',
         }}
       >
         <Toolbar style={{ display: 'flex' }}>
           <div style={{ flexGrow: 1 }}>
-            <div className="header_logo">
-              <Logo link={true} linkTo="/" width="70px" height="70px" />
+            <div>
+              <Logo link={true} linkTo="/" width="90px" height="90px" />
             </div>
           </div>
 
           <Link to="/custom_printing">
-            <Button color="inherit">Custom Printing</Button>
+            <Button style={buttonStyle}>Custom T-Shirts</Button>
           </Link>
 
           <Link to="/products">
-            <Button color="inherit">All Products</Button>
+            <Button style={buttonStyle}>Brand</Button>
           </Link>
         </Toolbar>
       </AppBar>
