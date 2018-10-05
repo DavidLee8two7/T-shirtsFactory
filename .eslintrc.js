@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['last', 'prettier/react', 'plugin:react/recommended', 'radium'],
+    extends: ['last', 'prettier/react', 'plugin:react/recommended'],
   };
