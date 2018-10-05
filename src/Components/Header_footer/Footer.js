@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Logo } from '../Utils/Icons';
-import Radium from 'radium';
+import styled from 'styled-components';
 
 class Footer extends Component {
   render() {
-    const footerStyle = {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr 2fr',
-      gridTemplateRows: 'minimum-content',
-      justfyContent: 'center',
-      alignItems: 'center',
-      background: 'var(--color-primary)',
-      color: 'var(--color-primary-dark)',
-      padding: '3px',
-      borderTop: 'var(--line)',
-    };
+    const FooterStyle = styled.footer`
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: minimum-content;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-primary);
+      color: var(--color-primary-dark);
+      padding: 3px;
+      border-top: var(--line);
+    `;
 
     const leftStyle = {
       justfyItems: 'center',
@@ -32,7 +32,7 @@ class Footer extends Component {
     const year = new Date().getFullYear();
 
     return (
-      <footer className="footer" style={footerStyle}>
+      <FooterStyle className="footer">
         <div className="left" style={leftStyle}>
           <p style={{ zIndex: '1', fontSize: '1.1', fontWeight: '600' }}>
             T - Shirts Factory, Inc.
@@ -60,9 +60,9 @@ class Footer extends Component {
           <Logo width="120px" height="90px" link={true} linkTo="/" />
           &copy; {year} T-Shirts Factory, Inc. All rights reserved.
         </div>
-      </footer>
+      </FooterStyle>
     );
   }
 }
 
-export default Radium(Footer);
+export default Footer;
