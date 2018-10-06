@@ -11,6 +11,8 @@ class Header extends Component {
       color: 'var(--color-primary-dark)',
       fontSize: '1.5rem',
       fontWeight: '400',
+      textShadow: `var(--shadow-light)`,
+      zIndex: '1',
     };
 
     return (
