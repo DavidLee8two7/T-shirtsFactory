@@ -6,7 +6,7 @@ import Promotions from './Promotions';
 
 const Home = () => {
   return (
-    <div className="bck_blue">
+    <div className="Home">
       <Featured />
       <Products />
       <BestSellers />

@@ -13,6 +13,15 @@ const FormFields = ({ formdata, id, change }) => {
     return errorMessage;
   };
 
+  const labelInput = {
+    fontSize: '22rem',
+    margin: '1rem 0',
+    fontWeight: '300',
+    background: '#e5f4ff',
+    padding: '1rem',
+    display: 'inline-block',
+  };
+
   const renderTemplate = () => {
     let formTemplate = null;
 
@@ -37,7 +46,10 @@ const FormFields = ({ formdata, id, change }) => {
         formTemplate = (
           <div>
             {formdata.showlabel ? (
-              <div className="label_inputs"> {formdata.config.label} </div>
+              <div className="label_inputs" style={{ labelInput }}>
+                {' '}
+                {formdata.config.label}{' '}
+              </div>
             ) : null}
             <select
               value={formdata.value}
