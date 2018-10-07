@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
+import styled from 'styled-components';
 
 import entrance from '../../../Resources/images/entrance.jpg';
 
-class Text extends Component {
+class Greeting extends Component {
   animateNumber = () => (
     <Animate
       show={true}
@@ -87,6 +88,14 @@ class Text extends Component {
             style={{
               opacity,
               transform: `translate(${x}px, ${y}px)`,
+              gridColumn: '1',
+              gridRow: '1',
+              background: 'var(--color-primary-light)',
+              color: 'var(--color-primary-dark)',
+              fontSize: '4rem',
+              textTransform: 'uppercase',
+              textAlign: 'left',
+              padding: '0px 2rem',
             }}
           >
             Factory
@@ -114,7 +123,14 @@ class Text extends Component {
             style={{
               opacity,
               background: `url(${entrance})`,
-              transform: `translate(450px, 96px)`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              gridColumn: '3 / span 2',
+              gridRow: '1',
+              borderRadius: '.8rem',
+              filter: 'contrast(125%)',
+              zIndex: '3',
+              boxShadow: 'var(--shadow-dark)',
             }}
           />
         );
@@ -123,15 +139,22 @@ class Text extends Component {
   );
 
   render() {
+    const StyledGreeting = styled.div`
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 25rem);
+      grid-template-rows: repeat(2, 25rem);
+    `;
+
     return (
-      <div className="featured_text">
+      <StyledGreeting className="featured_text">
         {this.animateImage()}
         {this.animateNumber()}
         {this.animateFirst()}
         {this.animateSecond()}
-      </div>
+      </StyledGreeting>
     );
   }
 }
 
-export default Text;
+export default Greeting;

@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import Stripes from './Stripes';
-import Text from './Text';
+// import Stripes from './Stripes';
+import Greeting from './Greeting';
 import styled from 'styled-components';
 
 class Featured extends Component {
   render() {
-    const MainImage = styled.div`
-      margin: 0 auto;
-      width: 100%;
-      margin-top: 90px;
-      height: 100vh;
+    const StyledFeatures = styled.div`
+      margin-top: 100px;
+      grid-column: center-start / center-end;
+      grid-row: 1;
       overflow: hidden;
+      background: darkgray;
     `;
 
     return (
-      <MainImage className="main_image">
-        <Stripes />
-        <Text />
-      </MainImage>
+      <StyledFeatures className="landing_page">
+        <Greeting />
+        {/* <Stripes /> */}
+      </StyledFeatures>
     );
   }
 }
