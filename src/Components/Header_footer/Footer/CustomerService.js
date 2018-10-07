@@ -6,17 +6,15 @@ class CustomerService extends Component {
     const CustomerService = styled.div`
       justify-self: center;
       align-self: start;
-      text-align: left;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       padding: 0.2rem;
-      font-size: 1rem;
       p {
         z-index: 1;
-        margin-left: 2.1rem;
+        margin-left: 3.3rem;
         text-align: center;
-        text-shadow: var(--shadow-dark);
-        font-size: 1.5rem;
-        font-weight: 600;
+        text-shadow: var(--shadow-light);
+        font-size: 2rem;
+        font-weight: 400;
       }
       ul {
         list-style: none;
@@ -30,37 +28,36 @@ class CustomerService extends Component {
       a {
         margin-top: 0.25rem;
         font-size: 1.3rem;
-        border-bottom: 0.1rem solid var(--color-primary-dark);
       }
     `;
 
     return (
-      <CustomerService className="middle">
+      <CustomerService className="Customer_service">
         <p>Customer Service</p>
         <ul>
           <li>
-            <a href="/about_us" className="about-us">
+            <a href="/info" className="about">
               About Us
             </a>
           </li>
           <li>
-            <a href="/about_us" className="about-us">
+            <a href="/info" className="payment">
               Payment
             </a>
           </li>
           <li>
-            <a href="/about_us" className="about-us">
-              Shipping and Handling
-            </a>
-          </li>
-          <li>
-            <a href="/about_us" className="about-us">
+            <a href="/info" className="return">
               Returns and Exchanges
             </a>
           </li>
           <li>
-            <a href="/about_us" className="about-us">
-              International
+            <a href="/info" className="Terms">
+              Terms of Use
+            </a>
+          </li>
+          <li>
+            <a href="/info" className="policy">
+              Privacy Policy
             </a>
           </li>
         </ul>

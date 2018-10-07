@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ContactInfo from './ContactInfo';
 import CustomerService from './CustomerService';
-import RegisterCustomer from './RegisterCustomer';
+import Newsletter from './Newsletter';
 
 class Footer extends Component {
   render() {
@@ -20,10 +20,10 @@ class Footer extends Component {
     `;
 
     return (
-      <StyledFooter className="footer">
-        <ContactInfo className="left" />
-        <CustomerService className="middle" />
-        <RegisterCustomer className="right" />
+      <StyledFooter className="styled_footer">
+        <ContactInfo className="contact_info" />
+        <CustomerService className="customer_service" />
+        <Newsletter className="newsletter" />
       </StyledFooter>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormFields from '../../Utils/FormFields';
 import { validate } from '../../Utils/Misc';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 import SvgIcon from './SVGIcons';
 import { firebasePromotions } from '../../../firebase';
 
@@ -16,7 +17,7 @@ class EmailRegister extends Component {
         config: {
           name: 'email_input',
           type: 'email',
-          placeholder: 'Enter your email',
+          placeholder: 'Please enter your email here!',
         },
         validation: {
           required: true,
@@ -100,16 +101,6 @@ class EmailRegister extends Component {
   }
 
   render() {
-    const EnrollDiv = styled.div`
-      text-align: center;
-    `;
-
-    const StyledInput = styled.div`
-      width: 100%;
-      margin-top: 1rem;
-      padding: 0.1rem 0;
-    `;
-
     const EnrollButton = styled.button`
       width: 100%;
       height: 3rem;
@@ -127,71 +118,69 @@ class EmailRegister extends Component {
     `;
 
     return (
-      <EnrollDiv>
-        <form onSubmit={event => this.submitForm(event)}>
-          <StyledInput className="enroll_input">
-            <FormFields
-              id={'email'}
-              formdata={this.state.formdata.email}
-              change={element => this.updateForm(element)}
-              style={{ boxShadow: `var(--shadow-dark)` }}
-            />
-
-            {this.state.formError ? (
-              <div
-                style={{
-                  color: 'var(--color-secondary)',
-                  fontWeight: '600',
-                  fontSize: '1.5rem',
-                  margin: '1rem 0',
-                }}
-              >
-                Please enter correct email address 😊
+      <Fade>
+        <div className="email" style={{ textAlign: 'center' }}>
+          <form onSubmit={event => this.submitForm(event)}>
+            <div className="email_input">
+              <FormFields
+                id={'email'}
+                formdata={this.state.formdata.email}
+                change={element => this.updateForm(element)}
+              />
+              {this.state.formError ? (
+                <div
+                  style={{
+                    color: 'var(--color-secondary)',
+                    fontWeight: '600',
+                    fontSize: '1.5rem',
+                  }}
+                >
+                  Please enter correct email address 😊
+                </div>
+              ) : null}
+              <div>{this.state.formSuccess}</div>
+              <EnrollButton onClick={event => this.submitForm(event)}>
+                Subscribe
+              </EnrollButton>
+              <div>
+                <a
+                  href="https://www.yelp.com/biz/t-shirts-factory-santa-ana-4?osq=t+shirt+factory"
+                  className="email"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SvgIcon
+                    name={'yelp'}
+                    style={{
+                      marginTop: '2.5rem',
+                      width: '4rem',
+                      height: '4rem',
+                      fill: '#d32323',
+                    }}
+                  />
+                  <span
+                    style={{
+                      zIndex: '1',
+                      textAlign: 'left',
+                      fontSize: '3rem',
+                      fontWeight: '400',
+                      textShadow: 'var(--shadow-light)',
+                      borderBottom: '0.1rem solid var(--color-primary-dark)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    &nbsp;find us on yelp
+                  </span>
+                </a>
+                <p style={{ marginTop: '4rem', fontSize: '2rem' }}>
+                  &copy; {new Date().getFullYear()}
+                  &nbsp; T - Shirts Factory, Inc. All rights reserved.
+                </p>
               </div>
-            ) : null}
-
-            <div>{this.state.formSuccess}</div>
-            <EnrollButton onClick={event => this.submitForm(event)}>
-              Subscribe
-            </EnrollButton>
-          </StyledInput>
-        </form>
-        <div>
-          <a
-            href="https://www.yelp.com/biz/t-shirts-factory-santa-ana-4?osq=t+shirt+factory"
-            className="email"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SvgIcon
-              name={'yelp'}
-              style={{
-                marginTop: '2.5rem',
-                width: '4rem',
-                height: '4rem',
-                fill: '#d32323',
-              }}
-            />
-            <span
-              style={{
-                zIndex: '1',
-                textAlign: 'left',
-                fontSize: '3rem',
-                fontWeight: '400',
-                textShadow: 'var(--shadow-light)',
-                borderBottom: '0.1rem solid var(--color-primary-dark)',
-                textTransform: 'uppercase',
-              }}
-            >
-              &nbsp;find us on yelp
-            </span>
-          </a>
-          <p style={{ marginTop: '5rem', fontSize: '2rem' }}>
-            &copy; {new Date().getFullYear()}
-            &nbsp; T - Shirts Factory, Inc. All rights reserved.
-          </p>
+            </div>
+          </form>
         </div>
-      </EnrollDiv>
+      </Fade>
     );
   }
 }

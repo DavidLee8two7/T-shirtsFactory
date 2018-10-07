@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 class ContactInfo extends Component {
   render() {
-    const DivLeft = styled.div`
+    const ContactInfo = styled.div`
       justify-self: center;
       align-self: start;
       margin-top: 2rem;
@@ -11,9 +11,9 @@ class ContactInfo extends Component {
       p {
         z-index: 1;
         margin-left: 3.5rem;
-        text-shadow: var(--shadow-dark);
-        font-size: 1.5rem;
-        font-weight: 600;
+        text-shadow: var(--shadow-light);
+        font-size: 2rem;
+        font-weight: 400;
         text-align: left;
       }
       ul {
@@ -35,7 +35,7 @@ class ContactInfo extends Component {
     `;
 
     return (
-      <DivLeft className="left">
+      <ContactInfo className="Contact_info">
         <div>
           <p>T - Shirts Factory, Inc.</p>
           <ul>
@@ -53,13 +53,13 @@ class ContactInfo extends Component {
             <li>Santa Ana, CA 92704</li>
             <li>714 545 3231</li>
             <li>
-              <a href="mailto:2337tshirtsfactory@gmail.com" className="email">
+              <a className="email" href="mailto:2337tshirtsfactory@gmail.com">
                 2337tshirtsfactory@gmail.com
               </a>
             </li>
           </ul>
         </div>
-      </DivLeft>
+      </ContactInfo>
     );
   }
 }

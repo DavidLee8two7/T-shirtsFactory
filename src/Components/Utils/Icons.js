@@ -11,6 +11,7 @@ export const Logo = props => {
         width: props.width,
         height: props.height,
         background: `url(${companyLogo}) no-repeat`,
+        backgroundSize: 'cover',
       }}
     />
   );

@@ -25,19 +25,23 @@ class Header extends Component {
           borderBottom: 'var(--line)',
         }}
       >
-        <Toolbar style={{ display: 'flex' }}>
+        <Toolbar style={{ display: 'flex' }} className="Toolbar">
           <div style={{ flexGrow: 1 }}>
-            <div>
+            <div className="company_logo">
               <Logo link={true} linkTo="/" width="90px" height="90px" />
             </div>
           </div>
 
           <Link to="/custom_printing">
-            <Button style={buttonStyle}>Custom T-Shirts</Button>
+            <Button className="Customer_printing" style={buttonStyle}>
+              Custom T-Shirts
+            </Button>
           </Link>
 
           <Link to="/products">
-            <Button style={buttonStyle}>Brand</Button>
+            <Button className="Products_showcase" style={buttonStyle}>
+              Brand
+            </Button>
           </Link>
         </Toolbar>
       </AppBar>
