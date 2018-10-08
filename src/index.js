@@ -31,8 +31,8 @@ injectGlobal`
   --color-secondary: #E30425;
   --color-white: #fafafa;
   --color-black: #4C4646;
-  --shadow-dark: .11rem .11rem .11rem rgba(0, 0, 0, 0.5);
-  --shadow-light: .11rem .11rem .11rem rgba(0, 0, 0, 0.2);
+  --shadow-dark: .21rem .21rem .21rem rgba(68, 44, 46, 0.7);
+  --shadow-light: .11rem .11rem .11rem rgba(68, 44, 46, 0.3);
   --line: 2px solid var(--color-primary-dark); 
 }
 

@@ -6,11 +6,9 @@ import styled from 'styled-components';
 class Featured extends Component {
   render() {
     const StyledFeatures = styled.div`
-      margin-top: 100px;
       grid-column: center-start / center-end;
       grid-row: 1;
       overflow: hidden;
-      background: darkgray;
     `;
 
     return (

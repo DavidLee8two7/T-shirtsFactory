@@ -4,31 +4,47 @@ import Animate from 'react-move/Animate';
 import styled from 'styled-components';
 
 import entrance from '../../../Resources/images/entrance.jpg';
+import storeView from '../../../Resources/images/storeView.jpg';
 
 class Greeting extends Component {
   animateNumber = () => (
     <Animate
-      show={true}
       start={{
         opacity: 0,
-        rotate: 0,
+        x: -300,
+        y: 0,
       }}
       enter={{
         opacity: [1],
-        rotate: [360],
-        timing: { delay: 800, duration: 500, ease: easePolyOut },
+        x: [0],
+        y: [0],
+        timing: { delay: 400, duration: 1200, ease: easePolyOut },
       }}
     >
-      {({ opacity, rotate }) => {
+      {({ opacity, x, y }) => {
         return (
           <div
-            className="featured_number"
+            className="since1996"
             style={{
+              zIndex: '3',
+              gridColumn: '3 / span 2',
+              gridRow: '2',
+              padding: '2rem',
               opacity,
-              transform: `translate(330px, 270px) rotateY(${rotate}deg)`,
+              color: 'var(--color-primary-dark)',
+              fontFamily: 'var(--font-display)',
+              textShadow: 'var(--shadow-light)',
+              transform: `translate(${x}px, ${y}px)`,
             }}
           >
-            Since 1996
+            <p style={{ fontSize: '3.3rem' }}>
+              Custom T-shirts Printing
+              <br />& Family Clothing Shop
+              <br />
+              <span style={{ fontSize: '2.4rem' }}>
+                Since 1996 - 2337 S Bristol st Santa Ana CA
+              </span>
+            </p>
           </div>
         );
       }}
@@ -47,7 +63,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [200],
         y: [450],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 600, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -96,6 +112,7 @@ class Greeting extends Component {
               textTransform: 'uppercase',
               textAlign: 'left',
               padding: '0px 2rem',
+              position: 'absolute',
             }}
           >
             Factory
@@ -110,40 +127,48 @@ class Greeting extends Component {
       show={true}
       start={{
         opacity: 0,
+        x: -300,
+        y: 0,
       }}
       enter={{
         opacity: [1],
-        timing: { delay: 800, duration: 500, ease: easePolyOut },
+        x: [0],
+        y: [0],
+        timing: { delay: 400, duration: 1200, ease: easePolyOut },
       }}
     >
-      {({ opacity }) => {
-        return (
-          <div
-            className="featured_image"
-            style={{
-              opacity,
-              background: `url(${entrance})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              gridColumn: '3 / span 2',
-              gridRow: '1',
-              borderRadius: '.8rem',
-              filter: 'contrast(125%)',
-              zIndex: '3',
-              boxShadow: 'var(--shadow-dark)',
-            }}
-          />
-        );
+      {({ opacity, x, y }) => {
+        const StyledBlur = styled.div`
+          grid-column: 3 / span 2;
+          grid-row: 1 / span 2;
+          z-index: 2;
+          opacity: 1;
+          background: url(${entrance});
+          background-size: contain;
+          background-repeat: no-repeat;
+          border-radius: 0.8rem;
+          filter: contrast(125%);
+          border: 1px solid var(--color-primary-dark);
+          box-shadow: var(--shadow-dark);
+          transform: translate(${x}px, ${y}px);
+          &:hover {
+            background: url(${storeView});
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        `;
+        return <StyledBlur className="featured_image" />;
       }}
     </Animate>
   );
 
   render() {
     const StyledGreeting = styled.div`
-      margin-top: 3rem;
+      margin-top: 15rem;
       display: grid;
       grid-template-columns: repeat(4, 25rem);
       grid-template-rows: repeat(2, 25rem);
+      position: absolute;
     `;
 
     return (

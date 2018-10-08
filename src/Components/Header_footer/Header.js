@@ -12,7 +12,7 @@ class Header extends Component {
       fontSize: '1.5rem',
       fontWeight: '400',
       textShadow: `var(--shadow-light)`,
-      zIndex: '1',
+      zIndex: '2',
     };
 
     return (
@@ -27,7 +27,7 @@ class Header extends Component {
       >
         <Toolbar style={{ display: 'flex' }} className="Toolbar">
           <div style={{ flexGrow: 1 }}>
-            <div className="company_logo">
+            <div className="company_logo" style={{ zIndex: '2' }}>
               <Logo link={true} linkTo="/" width="90px" height="90px" />
             </div>
           </div>
