@@ -1,8 +1,8 @@
 import React from 'react';
-import Featured from './Featured';
-// import Products from './Products';
-// import BestSellers from './BestSellers';
-// import Promotions from './Promotions';
+import Introduction from './Introduction';
+import Products from './Products';
+import BestSellers from './BestSellers';
+import Promotions from './Promotions';
 
 import styled from 'styled-components';
 
@@ -19,9 +19,9 @@ const Home = () => {
 
   return (
     <StyledHome className="Home">
-      <Featured />
-      {/* <Products />
-      <BestSellers />
+      <Introduction />
+      <Products />
+      {/* <BestSellers />
       <Promotions /> */}
     </StyledHome>
   );

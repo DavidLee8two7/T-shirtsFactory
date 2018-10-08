@@ -1,10 +1,16 @@
 import React from 'react';
 import { Tag } from '../../Utils/Misc';
 import ProductShowcase from './ProductShowcase';
+import styled from 'styled-components';
 
-const Products = () => {
+const ProductCategory = () => {
+  const StyledProducts = styled.div`
+    grid-column: center-start / center-end;
+    grid-row: 2;
+  `;
+
   return (
-    <div className="products">
+    <StyledProducts className="products">
       <div className="container">
         <Tag bck="#0e1731" size="50px" color="#ffffff">
           Main Products
@@ -22,8 +28,8 @@ const Products = () => {
           See All Products
         </Tag>
       </div>
-    </div>
+    </StyledProducts>
   );
 };
 
-export default Products;
+export default ProductCategory;

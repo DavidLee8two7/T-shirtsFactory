@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { firebaseProducts } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../Utils/Misc';
-
+import styled from 'styled-components';
 import DisplayBlock from '../../Utils/DisplayBlock';
 import Slide from 'react-reveal/Slide';
 
@@ -37,8 +37,18 @@ class ProductShowcase extends Component {
       : null;
 
   render() {
+    const CategoryCard = styled.div`
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: min-content auto;
+    `;
+
     return (
-      <div className="items">{this.showProducts(this.state.products)}</div>
+      <CategoryCard className="items" styles={{ gridAutoFlow: 'column' }}>
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+      </CategoryCard>
     );
   }
 }
