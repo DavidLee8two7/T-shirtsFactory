@@ -25,6 +25,7 @@
     padding-bottom: 0;
 }
 
+
 ::-webkit-input-placeholder { 
     color: #cecece;
     text-align: center;
@@ -566,3 +567,5 @@
     position: absolute;
 }
 */
+
+

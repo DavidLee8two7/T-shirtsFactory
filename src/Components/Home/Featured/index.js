@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Stripes from './Stripes';
-import Greeting from './Greeting';
+import GreetingCard from './GreetingCard';
 import styled from 'styled-components';
 
 class Featured extends Component {
@@ -13,7 +13,7 @@ class Featured extends Component {
 
     return (
       <StyledFeatures className="landing_page">
-        <Greeting />
+        <GreetingCard />
         {/* <Stripes /> */}
       </StyledFeatures>
     );
