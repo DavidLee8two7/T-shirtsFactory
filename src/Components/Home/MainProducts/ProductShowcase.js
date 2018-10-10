@@ -46,7 +46,6 @@ class Cards extends Component {
           return (
             <div
               style={{
-                position: 'absolute',
                 left,
                 bottom,
               }}

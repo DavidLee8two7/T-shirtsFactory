@@ -47,10 +47,10 @@ body {
   font-family: var(--font-main);
   font-weight: 400;
   line-height: 1.7;
+  /* background-color: rgba(254, 234, 230, 0.8); */
   color: var(--color-primary-dark);
   text-rendering: optimizeLegibility;
   user-select: none;
-  background-color: var(--color-white);
   transition: all .5s;
 }
 
