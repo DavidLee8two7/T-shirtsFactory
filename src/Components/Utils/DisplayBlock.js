@@ -15,6 +15,8 @@ const DisplayBlock = ({ product }) => {
             className="icon"
             style={{
               background: `url(/images/products/${product.image}.jpg)`,
+              width: '25rem',
+              height: '25rem',
             }}
           />
         </div>

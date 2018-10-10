@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+// import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { firebaseProducts } from '../../firebase';
 import { firebaseLooper, reverseArray } from '../Utils/Misc';
@@ -30,9 +30,7 @@ class AllProducts extends Component {
 
   showPublished = published => {
     const list = this.state.products.filter(product => {
-      {
-        return product.final === published;
-      }
+      return product.final === published;
     });
     this.setState({
       filterProducts: published === 'All' ? this.state.products : list,

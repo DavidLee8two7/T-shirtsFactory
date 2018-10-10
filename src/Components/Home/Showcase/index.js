@@ -7,27 +7,38 @@ const ProductCategory = () => {
   const StyledProducts = styled.div`
     grid-column: center-start / center-end;
     grid-row: 2;
+
+    display: flex;
+  `;
+
+  const ProductWrapper = styled.div`
+    border: var(--line);
+    padding: 3rem;
   `;
 
   return (
     <StyledProducts className="products">
-      <div className="container">
-        <Tag bck="#0e1731" size="50px" color="#ffffff">
-          Main Products
+      <ProductWrapper className="container">
+        <Tag
+          bck="var(--color-primary-light)"
+          size="50px"
+          color="var(--color-primary-dark)"
+        >
+          Populars! Woops but it sounds cool!
         </Tag>
 
         <ProductShowcase />
 
         <Tag
-          bck="#ffffff"
-          size="22px"
-          color="#0e1731"
+          bck="var(--color-primary-light)"
+          size="50px"
+          color="var(--color-primary-dark)"
           link={true}
           linkto="/products"
         >
           See All Products
         </Tag>
-      </div>
+      </ProductWrapper>
     </StyledProducts>
   );
 };

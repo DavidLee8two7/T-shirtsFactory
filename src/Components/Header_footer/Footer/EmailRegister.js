@@ -135,7 +135,7 @@ class EmailRegister extends Component {
                     fontSize: '1.5rem',
                   }}
                 >
-                  Please enter correct email address 😊
+                  Please enter correct email address
                 </div>
               ) : null}
               <div>{this.state.formSuccess}</div>

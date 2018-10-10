@@ -7,7 +7,9 @@ class Introduction extends Component {
     const StyledIntroduction = styled.div`
       grid-column: center-start / center-end;
       grid-row: 1;
-      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
     `;
 
     return (

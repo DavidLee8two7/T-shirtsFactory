@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import stripes from '../../../Resources/images/stripes.png';
+// import stripes from '../../../Resources/images/stripes.png';
 import { Tag } from '../../Utils/Misc';
-import Reveal from 'react-reveal/Reveal';
+// import Reveal from 'react-reveal/Reveal';
 import BestsellerShowcase from './BestsellerShowcase';
+// import styled from 'styled-components';
 
 class BestSeller extends Component {
   state = {
@@ -11,84 +12,80 @@ class BestSeller extends Component {
 
   render() {
     return (
-      <Reveal
-        fraction={0.7}
-        onReveal={() => {
-          this.setState({ show: true });
+      <div
+        style={{
+          gridColumn: 'center-start / center-end',
+          gridRow: '3',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridTemplateRows: '60rem',
         }}
+        className="home_card_wrapper"
       >
-        <div
-          className="best_sellers"
-          style={{ background: `#ffffff url(${stripes})` }}
-        >
-          <div className="containers">
-            <div className="best_sellers_wrapper">
-              <div className="home_card_wrapper">
-                <BestsellerShowcase show={this.state.show} />
-              </div>
-              <div className="home_text_wrapper">
-                <div>
-                  <Tag
-                    bck="#0e1731"
-                    size="100px"
-                    color="#ffffff"
-                    custom={{
-                      display: 'inline-block',
-                      marginBottom: '20px',
-                    }}
-                  >
-                    Meet
-                  </Tag>
-                </div>
-                <div>
-                  <Tag
-                    bck="#0e1731"
-                    size="100px"
-                    color="#ffffff"
-                    custom={{
-                      display: 'inline-block',
-                      marginBottom: '20px',
-                    }}
-                  >
-                    Best
-                  </Tag>
-                </div>
-                <div>
-                  <Tag
-                    bck="#0e1731"
-                    size="100px"
-                    color="#ffffff"
-                    custom={{
-                      display: 'inline-block',
-                      marginBottom: '20px',
-                    }}
-                  >
-                    Sellers
-                  </Tag>
-                </div>
-                <div>
-                  <Tag
-                    bck="#ffffff"
-                    size="27px"
-                    color="#0e1731"
-                    link={true}
-                    linkto="/custom_printing"
-                    custom={{
-                      display: 'inline-block',
-                      marginBottom: '27px',
-                      border: '1px solid #0e1731',
-                    }}
-                  >
-                    See more items
-                  </Tag>
-                </div>
-              </div>
-            </div>
+        <div>
+          <BestsellerShowcase show={this.state.show} />
+        </div>
+        <div>
+          <div>
+            <Tag
+              bck="#0e1731"
+              color="red"
+              custom={{
+                marginBottom: '2rem',
+              }}
+            >
+              Meet
+            </Tag>
+          </div>
+          <div>
+            <Tag
+              bck="#0e1731"
+              color="red"
+              custom={{
+                marginBottom: '2rem',
+              }}
+            >
+              Best
+            </Tag>
+          </div>
+          <div>
+            <Tag
+              bck="#0e1731"
+              color="red"
+              custom={{
+                marginBottom: '2rem',
+              }}
+            >
+              Sellers
+            </Tag>
+          </div>
+          <div>
+            <Tag
+              bck="red"
+              size="27px"
+              color="#0e1731"
+              link={true}
+              linkto="/custom_printing"
+              custom={{
+                marginBottom: '27px',
+
+                border: '1px solid #0e1731',
+              }}
+            >
+              See more items
+            </Tag>
           </div>
         </div>
-      </Reveal>
+      </div>
     );
   }
 }
 
 export default BestSeller;
+
+// <Reveal
+// fraction={0.7}
+// onReveal={() => {
+//   this.setState({ show: true });
+// }}
+// > </Reveal>

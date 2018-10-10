@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import styled from 'styled-components';
-
 import entrance from '../../../Resources/images/entrance.jpg';
 import storeView from '../../../Resources/images/store_view.jpg';
 import brickWall from '../../../Resources/images/brick_wall.png';
@@ -20,7 +19,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 1200, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -37,12 +36,11 @@ class Greeting extends Component {
           border: 1px solid var(--color-primary-dark);
           box-shadow: var(--shadow-dark);
           transform: translate(${x}px, ${y}px);
-          transition: all 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
           &:hover {
             background: url(${storeView});
             background-size: contain;
             background-repeat: no-repeat;
-            transition: all 0.3s ease-in-out;
           }
         `;
         return <StyledImage className="company_image" />;
@@ -61,7 +59,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 1200, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -79,9 +77,9 @@ class Greeting extends Component {
 
         return (
           <BusinessInfo className="business_info">
-            <p style={{ fontSize: '3.3rem' }}>
-              Custom T-shirts Printing
-              <br />& Family Clothing Shop
+            <p style={{ fontSize: '3.3rem', textAlign: 'center' }}>
+              Family Clothing Store <br />-<br />
+              Custom T-shirts Printing Co.
               <br />
               <span style={{ fontSize: '2.4rem' }}>
                 Since 1996 - 2337 S Bristol st Santa Ana CA
@@ -105,7 +103,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 1200, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -141,7 +139,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 1200, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -177,7 +175,7 @@ class Greeting extends Component {
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 500, ease: easePolyOut },
+        timing: { delay: 300, duration: 1200, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -203,10 +201,10 @@ class Greeting extends Component {
 
   render() {
     const GreetingCards = styled.div`
-      margin-top: 15rem;
+      margin-top: 20rem;
       display: grid;
-      grid-template-columns: repeat(4, 25rem);
-      grid-template-rows: repeat(2, 25rem);
+      grid-template-columns: repeat(4, 30rem);
+      grid-template-rows: repeat(2, 30rem);
       grid-gap: 0.5rem;
       position: absolute;
     `;
