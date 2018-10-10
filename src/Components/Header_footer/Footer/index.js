@@ -8,6 +8,7 @@ import Newsletter from './Newsletter';
 class Footer extends Component {
   render() {
     const StyledFooter = styled.footer`
+      z-index: 4;
       display: grid;
       grid-template-columns: 1fr 1fr 40vw;
       grid-template-rows: minimum-content;
@@ -15,7 +16,7 @@ class Footer extends Component {
       align-items: center;
       background-color: var(--color-primary);
       color: var(--color-primary-dark);
-      padding: 3px;
+      padding: 0.3rem;
       border-top: var(--line);
     `;
 

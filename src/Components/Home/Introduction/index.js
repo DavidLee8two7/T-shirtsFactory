@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-// import Stripes from './Stripes';
 import GreetingCard from './GreetingCard';
 import styled from 'styled-components';
 
-class Featured extends Component {
+class Introduction extends Component {
   render() {
-    const StyledFeatures = styled.div`
+    const StyledIntroduction = styled.div`
       grid-column: center-start / center-end;
       grid-row: 1;
-      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
     `;
 
     return (
-      <StyledFeatures className="landing_page">
+      <StyledIntroduction className="landing_page">
         <GreetingCard />
-        {/* <Stripes /> */}
-      </StyledFeatures>
+      </StyledIntroduction>
     );
   }
 }
 
-export default Featured;
+export default Introduction;

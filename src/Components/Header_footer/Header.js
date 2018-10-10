@@ -12,13 +12,13 @@ class Header extends Component {
       fontSize: '1.5rem',
       fontWeight: '400',
       textShadow: `var(--shadow-light)`,
-      zIndex: '2',
     };
 
     return (
       <AppBar
         position="fixed"
         style={{
+          zIndex: '4',
           backgroundColor: 'var(--color-primary)',
           boxShadow: 'none',
           padding: '3px 0',
@@ -27,7 +27,7 @@ class Header extends Component {
       >
         <Toolbar style={{ display: 'flex' }} className="Toolbar">
           <div style={{ flexGrow: 1 }}>
-            <div className="company_logo" style={{ zIndex: '2' }}>
+            <div className="company_logo">
               <Logo link={true} linkTo="/" width="90px" height="90px" />
             </div>
           </div>

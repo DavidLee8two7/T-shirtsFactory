@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Resources/css/app.css';
 import { injectGlobal } from 'styled-components';
 
 import { BrowserRouter } from 'react-router-dom';
@@ -51,7 +50,7 @@ body {
   color: var(--color-primary-dark);
   text-rendering: optimizeLegibility;
   user-select: none;
-  background-color: var(--color-white)
+  background-color: var(--color-white);
   transition: all .5s;
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { firebaseProducts } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../Utils/Misc';
-
+import styled from 'styled-components';
 import DisplayBlock from '../../Utils/DisplayBlock';
-import Slide from 'react-reveal/Slide';
+import Swing from 'react-reveal/Swing';
 
 class ProductShowcase extends Component {
   state = {
@@ -12,7 +12,7 @@ class ProductShowcase extends Component {
 
   componentDidMount() {
     firebaseProducts
-      .limitToLast(6)
+      .limitToLast(3)
       .once('value')
       .then(snapshot => {
         const products = firebaseLooper(snapshot);
@@ -26,19 +26,34 @@ class ProductShowcase extends Component {
   showProducts = products =>
     products
       ? products.map(product => (
-          <Slide bottom key={product.id}>
+          <Swing bottom key={product.id}>
             <div className="item">
               <div className="wrapper">
                 <DisplayBlock product={product} />
               </div>
             </div>
-          </Slide>
+          </Swing>
         ))
       : null;
 
   render() {
+    const CategoryCard = styled.div`
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: min-content auto;
+    `;
+
     return (
-      <div className="items">{this.showProducts(this.state.products)}</div>
+      <CategoryCard
+        className="items"
+        styles={{ width: '30rem', height: '30rem' }}
+      >
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+        <div>{this.showProducts(this.state.products)}</div>
+      </CategoryCard>
     );
   }
 }
