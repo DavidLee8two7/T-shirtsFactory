@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import subway from '../../../Resources/images/subway.png';
 import { Tag } from '../../Utils/Misc';
 import Reveal from 'react-reveal/Reveal';
 import ProductShowcase from './ProductShowcase';
@@ -23,7 +22,6 @@ class MainProducts extends Component {
             gridColumn: 'full-start / full-end',
             gridRow: '2',
             display: 'grid',
-            backgroundImage: `linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(${subway})`,
             gridTemplateColumns: '1fr 1fr',
             gridTemplateRows: '60rem',
           }}

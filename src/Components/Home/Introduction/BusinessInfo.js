@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import styled from 'styled-components';
+
 import storeEntrance from '../../../Resources/images/storeEntrance.jpg';
 import storeInside from '../../../Resources/images/storeInside.jpg';
 import pinkhood from '../../../Resources/images/pinkhood.jpg';
 import coffeeTable from '../../../Resources/images/coffeeTable.jpg';
-import dog from '../../../Resources/images/dog.jpg';
+import tshirts from '../../../Resources/images/tshirts.jpg';
 
 class BusinessInfo extends Component {
   animateImage = () => (
@@ -145,7 +147,7 @@ class BusinessInfo extends Component {
           grid-row: 2;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${dog});
+          background: url(${tshirts});
           background-size: cover;
           background-position: bottom;
           background-repeat: no-repeat;

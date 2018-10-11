@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import BusinessInfo from './BusinessInfo';
 import styled from 'styled-components';
 import plaid from '../../../Resources/images/plaid.jpg';
-import subway from '../../../Resources/images/subway.png';
 
 class Introduction extends Component {
   render() {
@@ -14,7 +13,7 @@ class Introduction extends Component {
           rgba(254, 234, 230, 0.8),
           rgba(254, 234, 230, 0.8)
         ),
-        url(${subway});
+        url(${plaid});
       background-repeat: repeat;
       display: flex;
       justify-content: center;
