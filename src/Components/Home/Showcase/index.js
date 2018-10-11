@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const ProductCategory = () => {
   const StyledProducts = styled.div`
     grid-column: center-start / center-end;
-    grid-row: 2;
+    grid-row: 3;
 
     display: flex;
   `;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
-import MainItem from '../../../Resources/images/main1.jpg';
+import MainItem from '../../../Resources/images/tshirts.jpg';
 import ItemCard from '../../Utils/ItemCard';
 
 class Cards extends Component {
@@ -46,7 +46,6 @@ class Cards extends Component {
           return (
             <div
               style={{
-                position: 'absolute',
                 left,
                 bottom,
               }}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ItemCard from '../Utils/ItemCard';
 import Fade from 'react-reveal/Fade';
 
-import Stripes from '../../Resources/images/stripes.png';
+import plaid from '../../Resources/images/plaid.jpg';
 import { firebaseItems, firebase } from '../../firebase';
 import { firebaseLooper } from '../Utils/Misc';
 import { Promise } from 'core-js';
@@ -68,7 +68,7 @@ class CustomPrinting extends Component {
         style={{
           width: '1200px',
           height: '1000px',
-          background: `url(${Stripes}) repeat`,
+          background: `url(${plaid}) repeat`,
         }}
       >
         {!this.state.loading ? (

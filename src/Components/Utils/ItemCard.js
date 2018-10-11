@@ -3,7 +3,7 @@ import React from 'react';
 const ItemCard = props => {
   return (
     <div
-      style={{ width: '350px', height: '350px' }}
+      style={{ width: '10rem', height: '10rem' }}
       className="item_card_wrapper"
     >
       <div

@@ -1,8 +1,8 @@
 import React from 'react';
 import Introduction from './Introduction';
 import Showcase from './Showcase';
-import BestSellers from './BestSellers';
-import Promotions from './Promotions';
+import MainProducts from './MainProducts';
+import Reviews from './Reviews';
 
 import styled from 'styled-components';
 
@@ -14,15 +14,15 @@ const Home = () => {
       [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end])
       [center-end] minmax(6rem, 1fr)
       [full-end];
-    grid-template-rows: 100vh repeat(4, min-content);
+    grid-template-rows: 100vh repeat(3, minmax(min-content, max-content));
   `;
 
   return (
     <StyledHome className="Home">
       <Introduction />
+      <MainProducts />
       <Showcase />
-      <BestSellers />
-      {/* <Promotions /> */}
+      <Reviews />
     </StyledHome>
   );
 };

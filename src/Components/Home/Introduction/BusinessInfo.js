@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
+
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import styled from 'styled-components';
-import entrance from '../../../Resources/images/entrance.jpg';
-import storeView from '../../../Resources/images/store_view.jpg';
-import brickWall from '../../../Resources/images/brick_wall.png';
 
-class Greeting extends Component {
+import storeEntrance from '../../../Resources/images/storeEntrance.jpg';
+import storeInside from '../../../Resources/images/storeInside.jpg';
+import pinkhood from '../../../Resources/images/pinkhood.jpg';
+import coffeeTable from '../../../Resources/images/coffeeTable.jpg';
+import tshirts from '../../../Resources/images/tshirts.jpg';
+
+class BusinessInfo extends Component {
   animateImage = () => (
     <Animate
       show={true}
       start={{
         opacity: 0,
-        x: 300,
+        x: 50,
         y: 0,
       }}
       enter={{
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 1200, ease: easePolyOut },
+        timing: { delay: 500, duration: 1000, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -28,65 +32,24 @@ class Greeting extends Component {
           grid-row: 1 / span 2;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${entrance});
-          background-size: contain;
+          background: url(${storeEntrance});
+          background-size: cover;
+          background-position: center;
           background-repeat: no-repeat;
-          border-radius: 0.8rem;
+          border-radius: 0.3rem;
           filter: contrast(125%);
           border: 1px solid var(--color-primary-dark);
           box-shadow: var(--shadow-dark);
           transform: translate(${x}px, ${y}px);
           transition: transform 0.3s ease-in-out;
           &:hover {
-            background: url(${storeView});
-            background-size: contain;
+            background: url(${storeInside});
+            background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
           }
         `;
         return <StyledImage className="company_image" />;
-      }}
-    </Animate>
-  );
-
-  animateInfo = () => (
-    <Animate
-      start={{
-        opacity: 0,
-        x: 300,
-        y: 0,
-      }}
-      enter={{
-        opacity: [1],
-        x: [0],
-        y: [0],
-        timing: { delay: 300, duration: 1200, ease: easePolyOut },
-      }}
-    >
-      {({ opacity, x, y }) => {
-        const BusinessInfo = styled.div`
-          z-index: 3;
-          grid-column: 3 / span 2;
-          grid-row: 2;
-          padding: 2rem;
-          opacity: ${opacity};
-          color: var(--color-primary-dark);
-          font-family: var(--font-display);
-          text-shadow: var(--shadow-light);
-          transform: translate(${x}px, ${y}px);
-        `;
-
-        return (
-          <BusinessInfo className="business_info">
-            <p style={{ fontSize: '3.3rem', textAlign: 'center' }}>
-              Family Clothing Store <br />-<br />
-              Custom T-shirts Printing Co.
-              <br />
-              <span style={{ fontSize: '2.4rem' }}>
-                Since 1996 - 2337 S Bristol st Santa Ana CA
-              </span>
-            </p>
-          </BusinessInfo>
-        );
       }}
     </Animate>
   );
@@ -97,13 +60,13 @@ class Greeting extends Component {
       start={{
         opacity: 0,
         x: 0,
-        y: -300,
+        y: -50,
       }}
       enter={{
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 1200, ease: easePolyOut },
+        timing: { delay: 500, duration: 1000, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -112,10 +75,10 @@ class Greeting extends Component {
           grid-row: 1;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${brickWall});
+          background: url(${pinkhood});
           background-size: cover;
           background-repeat: no-repeat;
-          border-radius: 0.8rem;
+          border-radius: 0.3rem;
           filter: contrast(125%);
           border: 1px solid var(--color-primary-dark);
           box-shadow: var(--shadow-dark);
@@ -133,13 +96,13 @@ class Greeting extends Component {
       start={{
         opacity: 0,
         x: 0,
-        y: -300,
+        y: -50,
       }}
       enter={{
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 1200, ease: easePolyOut },
+        timing: { delay: 500, duration: 1000, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -148,10 +111,10 @@ class Greeting extends Component {
           grid-row: 1;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${brickWall});
+          background: url(${coffeeTable});
           background-size: cover;
           background-repeat: no-repeat;
-          border-radius: 0.8rem;
+          border-radius: 0.3rem;
           filter: contrast(125%);
           border: 1px solid var(--color-primary-dark);
           box-shadow: var(--shadow-dark);
@@ -168,14 +131,14 @@ class Greeting extends Component {
       show={true}
       start={{
         opacity: 0,
-        x: -300,
+        x: -50,
         y: 0,
       }}
       enter={{
         opacity: [1],
         x: [0],
         y: [0],
-        timing: { delay: 300, duration: 1200, ease: easePolyOut },
+        timing: { delay: 500, duration: 1000, ease: easePolyOut },
       }}
     >
       {({ opacity, x, y }) => {
@@ -184,10 +147,11 @@ class Greeting extends Component {
           grid-row: 2;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${brickWall});
+          background: url(${tshirts});
           background-size: cover;
+          background-position: bottom;
           background-repeat: no-repeat;
-          border-radius: 0.8rem;
+          border-radius: 0.3rem;
           filter: contrast(125%);
           border: 1px solid var(--color-primary-dark);
           box-shadow: var(--shadow-dark);
@@ -200,25 +164,24 @@ class Greeting extends Component {
   );
 
   render() {
-    const GreetingCards = styled.div`
+    const BusinessInfo = styled.div`
       margin-top: 20rem;
       display: grid;
       grid-template-columns: repeat(4, 30rem);
       grid-template-rows: repeat(2, 30rem);
-      grid-gap: 0.5rem;
+      grid-gap: 0.4rem;
       position: absolute;
     `;
 
     return (
-      <GreetingCards className="featured_text">
+      <BusinessInfo className="featured_text">
         {this.animateImage()}
-        {this.animateInfo()}
         {this.animateProduct()}
         {this.animateProduct2()}
         {this.animateProduct3()}
-      </GreetingCards>
+      </BusinessInfo>
     );
   }
 }
 
-export default Greeting;
+export default BusinessInfo;
