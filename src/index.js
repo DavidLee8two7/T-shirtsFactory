@@ -55,7 +55,6 @@ body {
   color: var(--color-primary-dark);
   text-rendering: optimizeLegibility;
   user-select: none;
-  transition: all .5s;
 }
 
 input {
