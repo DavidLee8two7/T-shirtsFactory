@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import styled from 'styled-components';
-import storeEntrance from '../../../Resources/images/storeEntrance.jpg';
-import storeInside from '../../../Resources/images/storeInside.jpg';
-import pinkhood from '../../../Resources/images/pinkhood.jpg';
-import coffeeTable from '../../../Resources/images/coffeeTable.jpg';
-import dog from '../../../Resources/images/dog.jpg';
+import storeEntrance from '../../../Resources/images/home/storeEntrance.jpg';
+import storeInside from '../../../Resources/images/home/storeInside.jpg';
+import pinkhood from '../../../Resources/images/home/pinkhood.jpg';
+import coffeeTable from '../../../Resources/images/home/coffeeTable.jpg';
+import skirtLady from '../../../Resources/images/home/skirtLady.jpg';
 
 class BusinessInfo extends Component {
   animateImage = () => (
@@ -145,7 +145,7 @@ class BusinessInfo extends Component {
           grid-row: 2;
           z-index: 2;
           opacity: ${opacity};
-          background: url(${dog});
+          background: url(${skirtLady});
           background-size: cover;
           background-position: bottom;
           background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BusinessInfo from './BusinessInfo';
 import styled from 'styled-components';
-import plaid from '../../../Resources/images/plaid.jpg';
+import plaid from '../../../Resources/images/home/plaid.jpg';
 
 class Introduction extends Component {
   render() {
@@ -19,11 +19,7 @@ class Introduction extends Component {
       justify-content: center;
     `;
 
-    return (
-      <StyledIntroduction className="landing_page">
-        <BusinessInfo />
-      </StyledIntroduction>
-    );
+    return <StyledIntroduction className="landing_page" />;
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Zoom from 'react-reveal/Zoom';
-import promotion1 from '../../../Resources/images/promotion1.jpg';
+import promotion1 from '../../../Resources/images/home/promotion1.jpg';
 
 const PromotionAnimation = () => {
   return (

@@ -7,9 +7,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
 import styled from 'styled-components';
-import plaid from '../../Resources/images/plaid.jpg';
-import bookColored from '../../Resources/images/bookColored.png';
-import shopColored from '../../Resources/images/shopColored.png';
+import plaid from '../../Resources/images/home/plaid.jpg';
+import bookColored from '../../Resources/images/home/bookColored.png';
+import shopColored from '../../Resources/images/home/shopColored.png';
 
 class Header extends Component {
   render() {
@@ -22,6 +22,7 @@ class Header extends Component {
           ),
           url(${plaid});
         p {
+          filter: alpha(opacity=100);
           opacity: 1;
         }
         .Products_showcase div {
@@ -48,6 +49,7 @@ class Header extends Component {
     const buttonStyle = {
       color: 'var(--color-primary-dark)',
       fontSize: '1.3rem',
+      fontFamily: 'var(--font-display)',
       letterSpacing: '0.3rem',
       lineHeight: '1.4rem',
       fontWeight: '600',

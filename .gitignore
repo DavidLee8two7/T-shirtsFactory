@@ -28,3 +28,4 @@ yarn-error.log*
 firebase.json
 package-lock.json
 .babelrc
+sample.css
