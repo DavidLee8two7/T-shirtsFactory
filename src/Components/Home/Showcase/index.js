@@ -24,7 +24,7 @@ const ProductCategory = () => {
           size="50px"
           color="var(--color-primary-dark)"
         >
-          Populars! Woops but it sounds cool!
+          Populars!
         </Tag>
 
         <ProductShowcase />
