@@ -17,6 +17,7 @@ class MainProducts extends Component {
       grid-column-gap: 1.5rem;
       align-items: center;
       font-family: var(--font-display);
+      font-weight: 500;
       font-size: 2.3rem;
       letter-spacing: 0.3rem;
       text-transform: uppercase;
@@ -29,11 +30,12 @@ class MainProducts extends Component {
         display: block;
         background-color: var(--color-primary-dark);
       }
+      transition: var(--timing);
     `;
 
     return (
       <Zoom
-        fraction={0.45}
+        fraction={0.9}
         onReveal={() => {
           this.setState({ show: true });
         }}
@@ -49,19 +51,10 @@ class MainProducts extends Component {
             gridColumnGap: '1.5rem',
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative',
           }}
         >
           <FeaturedText className="Features-title">features</FeaturedText>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr 1fr',
-              gridTemplateRows: 'min-content',
-              gridColumnGap: '1.5rem',
-              alignItems: 'center',
-            }}
-          >
+          <div>
             <Feature show={this.state.show} />
           </div>
         </div>

@@ -1,27 +1,52 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import ItemCard from '../../Utils/ItemCard';
-
 import coffeeTable from '../../../Resources/images/home/coffeeTable.jpg';
 import tshirts from '../../../Resources/images/home/tshirts.jpg';
-import pinkhood from '../../../Resources/images/home/pinkhood.jpg';
+import memphis from '../../../Resources/images/home/memphis.png';
+import arrowSmall from '../../../Resources/images/home/arrowSmall.png';
 
 class Feature extends Component {
   state = {
     show: this.props.show,
-    cards: [coffeeTable, tshirts, pinkhood],
   };
 
   render() {
-    return this.state.cards.map((card, i) => (
-      <div className="featured" key={i} show={this.props.show}>
+    const Features = styled.div`
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: min-content;
+      grid-column-gap: 1.5rem;
+    `;
+
+    return (
+      <Features className="featured" show={this.props.show}>
         <ItemCard
-          className="featured items"
-          brandName="Nike"
-          itemName="good tshirts"
-          src={card}
+          className="design"
+          src={tshirts}
+          title="Design Studio"
+          descrption="Design tools, samples and more"
+          icon={arrowSmall}
         />
-      </div>
-    ));
+        <ItemCard
+          className="sales"
+          src={tshirts}
+          title="Special Sales"
+          descrption="Time to buy items"
+          icon={arrowSmall}
+          style={{
+            backgroundColor: 'blue',
+          }}
+        />
+        <ItemCard
+          className="gallery"
+          src={coffeeTable}
+          title="Look Book"
+          descrption="Fashion Advise"
+          icon={arrowSmall}
+        />
+      </Features>
+    );
   }
 }
 

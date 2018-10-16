@@ -37,7 +37,7 @@ injectGlobal`
   --shadow-dark: .21rem .21rem .21rem rgba(68, 44, 46, 0.7);
   --shadow-light: .11rem .11rem .11rem rgba(68, 44, 46, 0.3);
   --line: .15rem solid var(--color-primary-dark); 
-  --timing: { duration: 500, ease: easePolyOut };
+  --timing: { delay: 300, duration: 500, ease: easePolyOut };
 }
 
 html {
