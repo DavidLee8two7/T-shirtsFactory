@@ -37,25 +37,26 @@ injectGlobal`
   --shadow-dark: .21rem .21rem .21rem rgba(68, 44, 46, 0.7);
   --shadow-light: .11rem .11rem .11rem rgba(68, 44, 46, 0.3);
   --line: .15rem solid var(--color-primary-dark); 
+  --timing: { delay: 300, duration: 500, ease: easePolyOut };
 }
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%; 
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: inherit; 
   font-family: var(--font-main);
   font-weight: 400;
   line-height: 1.7;
-  background-color: rgba(254, 234, 230, 0.8);
+  background-color: var(--color-primary);
   color: var(--color-primary-dark);
   text-rendering: optimizeLegibility;
   user-select: none;
-  transition: all .5s;
 }
 
 input {

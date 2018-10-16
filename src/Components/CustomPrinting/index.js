@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ItemCard from '../Utils/ItemCard';
 import Fade from 'react-reveal/Fade';
 
-import plaid from '../../Resources/images/plaid.jpg';
+import plaid from '../../Resources/images/home/plaid.jpg';
 import { firebaseItems, firebase } from '../../firebase';
 import { firebaseLooper } from '../Utils/Misc';
 import { Promise } from 'core-js';

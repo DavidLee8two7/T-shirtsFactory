@@ -1,7 +1,7 @@
 import React from 'react';
 import Introduction from './Introduction';
 import Showcase from './Showcase';
-import MainProducts from './MainProducts';
+import Features from './Features';
 import Reviews from './Reviews';
 
 import styled from 'styled-components';
@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <StyledHome className="Home">
       <Introduction />
-      <MainProducts />
+      <Features />
       <Showcase />
       <Reviews />
     </StyledHome>
